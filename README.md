@@ -1,3 +1,37 @@
-# BigManager
+# Team Ideas
 
-scrive qua i problemi trovati per poi scegliere insieme quale fare
+## IdeaName (Idea owner)
+**Problema:** Problem description here
+
+**Soluzione:** Solution description here
+
+**Strumenti SW/HW da utilizzare:** Tools to use here
+
+
+## IdeaName (Idea owner)
+**Problema:** Problem description here
+
+**Soluzione:** Solution description here
+
+**Strumenti SW/HW da utilizzare:** Tools to use here
+
+## IdeaName (Idea owner)
+**Problema:** Problem description here
+
+**Soluzione:** Solution description here
+
+**Strumenti SW/HW da utilizzare:** Tools to use here
+
+## IdeaName (Idea owner)
+**Problema:** Problem description here
+
+**Soluzione:** Solution description here
+
+**Strumenti SW/HW da utilizzare:** Tools to use here
+
+## IdeaName (Idea owner)
+**Problema:** Problem description here
+
+**Soluzione:** Solution description here
+
+**Strumenti SW/HW da utilizzare:** Tools to use here
