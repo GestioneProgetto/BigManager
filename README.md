@@ -28,9 +28,8 @@
 
 **Strumenti SW/HW da utilizzare:** Database per salvare un informazione, pagina html per visualizzazione e app mobile per informazioni 
 
-## IdeaName (Idea owner)
-**Problema:** Problem description here
+## Wallet (Pugliano)
+**Problema:** Non sapere quanti saldi si hanno al mese togliendo tutte le spese(casa, luce, gas, ecc.)
 
-**Soluzione:** Solution description here
-
-**Strumenti SW/HW da utilizzare:** Tools to use here
+**Soluzione:** Creare un app/sito web con una tabella dove si andrà a inserire quanto si ha guadagnati questo mese e vedere quanto ti viene tolto con tutte le spese quotidiane, dicendoti se hai speso di più in un mese o nell' altro
+**Strumenti SW/HW da utilizzare:** db per salvare dati di ogni cliente, interfaccia web
