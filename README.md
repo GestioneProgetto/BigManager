@@ -15,11 +15,11 @@
 **Strumenti SW/HW da utilizzare:** un telefono con fotocamera, db per salvare le informazioni dei prodotti, inteffaccia web e applicazione per dispositico mobile
 
 ## WalleTracer (Occhiato)
-**Problema:** Difficoltà nel trovare i propri oggetti nelle vicinanze
+**Problema:** Difficoltà nel trovare i propri oggetti
 
-**Soluzione:** Creare un app per smartphone che consente di registrare vari oggetti, ai quali verrà associato un arduino dotato di speaker, per poterli ritrovare facilmente. Lo speaker suonerà quando richiesto tramite l'applicazione o l'interfaccia web.
+**Soluzione:** Creare un app per smartphone che consente di registrare vari oggetti, ai quali verrà associato un arduino dotato di speaker e gps, per poterli ritrovare facilmente. Lo speaker suonerà quando richiesto tramite l'applicazione o l'interfaccia web e l'oggetto potrà essere geolocalizzato.
 
-**Strumenti SW/HW da utilizzare:** Arduino, Speaker per Arduino, connessione per Arduino(Scheda WiFi), applicazione mobile, database per salvare tutti gli oggetti, interfaccia web
+**Strumenti SW/HW da utilizzare:** Arduino, Speaker per Arduino, connessione a internet per Arduino(Scheda WiFi), scheda GPS per Arduino, applicazione mobile, database per salvare tutti gli oggetti, interfaccia web.
 
 ## DIARIO (Berto)
 **Problema:**   calendario per gestire i compiti assegnati dai prof
