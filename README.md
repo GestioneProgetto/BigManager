@@ -22,7 +22,7 @@
 **Strumenti SW/HW da utilizzare:** Arduino, Speaker per Arduino, connessione per Arduino(Scheda WiFi), applicazione mobile, database per salvare tutti gli oggetti, interfaccia web
 
 ## DIARIO (Berto)
-    **Problema:**       il prof assegna i compirti
+**Problema:** il prof assegna i compirti
 
 
 **Soluzione:**    il programma (il giorno prima o un ora prima) della scadenza del compito ti invia un promemoria tramite mail-notifica chiedendo se ti sei ricordato di fare il compito
