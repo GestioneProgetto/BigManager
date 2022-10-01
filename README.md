@@ -21,12 +21,15 @@
 
 **Strumenti SW/HW da utilizzare:** Arduino, Speaker per Arduino, connessione per Arduino(Scheda WiFi), applicazione mobile, database per salvare tutti gli oggetti, interfaccia web
 
-## IdeaName (Idea owner)
-**Problema:** Problem description here
+## IdeaName (DIARIO)
+**Problema:**     simuilazione:
+    il prof assegna i compirti
 
-**Soluzione:** Solution description here
 
-**Strumenti SW/HW da utilizzare:** Tools to use here
+**Soluzione:**    il programma (il giorno prima o un ora prima) della scadenza del compito ti invia un promemoria tramite mail-notifica chiedendo se ti sei ricordato di fare il compito
+    l'utente sceglie con quanto anticipo ricevere la notifica.
+
+**Strumenti SW/HW da utilizzare:** Database per salvare un informazione, pagina html per visualizzazione e app mobile per informazioni 
 
 ## IdeaName (Idea owner)
 **Problema:** Problem description here
