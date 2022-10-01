@@ -10,9 +10,9 @@
 ## skip line (Colombo)
 **Problema:** Fare la fila in un supermercato in cassa, per pagare
 
-**Soluzione:** Creare un app per telefono che permette tramite la fotocamera di scansionare i codici a barre dei vari prodotti, applicazione sarà collegata ad un database contenete tutti i prodotti. Nel applicazione ci sarà una parte utente e una parte sviluppatore la parte utente permettera di aggiungere i prodotti che si voglio comprare e effettua la creazione di un carrello per poi procedere con il pagamento o l'eventuale cancellazione di un prodotto, la parte sviluppatore permettera di aggiungere nuovi prodotti e di vedere tutti i prodotti venduti, gli incassi e se c'è la necessidare di comprare altri prodotti perchè sono finiti.
+**Soluzione:** Creare un app per telefono che permette tramite la fotocamera di scansionare i codici a barre dei vari prodotti, applicazione sarà collegata ad un database contenete tutti i prodotti. Nel applicazione ci sarà una parte utente e una parte sviluppatore la parte utente permetterà di aggiungere i prodotti che si voglio comprare e effettua la creazione di un carrello per poi procedere con il pagamento o l'eventuale cancellazione di un prodotto, la parte sviluppatore permetterà di aggiungere nuovi prodotti e di vedere tutti i prodotti venduti, gli incassi e se c'è la necessità di comprare altri prodotti perchè sono finiti.
 
-**Strumenti SW/HW da utilizzare:** un telefono con fotocamera, db per salvare le informazioni dei prodotti, inteffaccia web e applicazione per dispositico mobile
+**Strumenti SW/HW da utilizzare:** un telefono con fotocamera, db per salvare le informazioni dei prodotti, interfaccia web e applicazione per dispositivo mobile
 
 ## WalleTracer (Occhiato)
 **Problema:** Difficoltà nel trovare i propri oggetti
