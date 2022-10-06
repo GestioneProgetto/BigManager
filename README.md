@@ -1,5 +1,10 @@
 # Team Ideas
 
+## Share your feedback
+
+Tramite la creazione di un profilo, un utente potrà valutare una determinata persona, in modo anonimo, di una determinata scuola (sia prof che studenti), avendo anche un area news e circolari
+**Strumenti SW/HW da utilizzare:** db per salvare dati di ogni utente, ogni account, interfaccia web
+
 ## EasyToMove
 **Problema:** Difficoltà nella pianificazione dei viaggi con i mezzi pubblici e nel monitoraggio in tempo reale dello status di quest'ultimi
 
@@ -33,3 +38,4 @@
 
 **Soluzione:** Creare un app/sito web con una tabella dove si andrà a inserire quanto si ha guadagnati questo mese e vedere quanto ti viene tolto con tutte le spese quotidiane, dicendoti se hai speso di più in un mese o nell' altro
 **Strumenti SW/HW da utilizzare:** db per salvare dati di ogni cliente, interfaccia web
+
