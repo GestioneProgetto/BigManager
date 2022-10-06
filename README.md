@@ -3,6 +3,7 @@
 ## Share your feedback
 
 Tramite la creazione di un profilo, un utente potrà valutare una determinata persona, in modo anonimo, di una determinata scuola (sia prof che studenti), avendo anche un area news e circolari
+
 **Strumenti SW/HW da utilizzare:** db per salvare dati di ogni utente, ogni account, interfaccia web
 
 ## EasyToMove
