@@ -1,5 +1,12 @@
 # Team Ideas
 
+## Una spesa intelligente
+**Provlema:** Con la corrente crisi economica è sempre più importante risparmiare il più possibile
+
+**Soluzione:** Avere un'applicazione che permette di inserire la propria lista della spesa, e crei differenti "preventitvi" nei vari supermercati della zona
+
+**Strumenti SW/HW:** Interfaccia web e/o relativa app mobile/desktop (PHP, MySQL, HTML, CSS)
+
 ## Share your feedback
 
 Tramite la creazione di un profilo, un utente potrà valutare una determinata persona, in modo anonimo, di una determinata scuola (sia prof che studenti), avendo anche un area news e circolari
