@@ -1,4 +1,4 @@
-# Team Ideas
+# Team Idea
 
 ## Una spesa intelligente
 **Provlema:** Con la corrente crisi economica è sempre più importante risparmiare il più possibile
