@@ -1,4 +1,4 @@
-# Una spesa intelligente
+# Spesa 2.0
 Visti gli aumenti dei prezzi di qualsiasi prodotto che purtroppo si stanno verificando a causa della situazione internazionale, abbiamo pensato di realizzare un’applicazione che permetta all’utente, attraverso un’applicazione per smartphone o un sito web, di poter risparmiare sui prodotti di primaria importanza come pasta, frutta e verdura permettendo il confronto della spesa totale nelle principali catene di supermercati. Inoltre, per l’utente sarà disponibile la possibilità di dividere la spesa in più supermercati per usufruire di eventuali prezzi migliori su determinati prodotti. 
 
 Il cliente potrà ricercare i supermercati nelle sue vicinanze ed inoltre potrà salvare i suoi preferiti per un’esperienza migliore.
