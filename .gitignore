@@ -1,3 +1,14 @@
 
 .vscode/ftp-kr.json
 .vscode/ftp-kr.sync.cache.json
+.idea/BigManager.iml
+.idea/dataSources.xml
+.idea/dataSources/6f3aa05e-72bc-4ad5-8844-b694c4a57244.xml
+.idea/dataSources/89c0682e-8572-4d83-94cc-24f3a2ce2a61.xml
+.idea/dataSources/89c0682e-8572-4d83-94cc-24f3a2ce2a61/storage_v2/_src_/schema/information_schema.FNRwLQ.meta
+.idea/dataSources/89c0682e-8572-4d83-94cc-24f3a2ce2a61/storage_v2/_src_/schema/performance_schema.kIw0nw.meta
+.idea/deployment.xml
+.idea/discord.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
