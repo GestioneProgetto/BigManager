@@ -6,8 +6,6 @@ $param = explode('?', $request);
 
 switch ($param[0]) {
     case '/':
-        require __DIR__ . '/pages/index.html';
-        break;
     case '':
         require __DIR__ . '/pages/index.html';
         break;
@@ -21,6 +19,7 @@ switch ($param[0]) {
         require __DIR__ . '/registration/index.php';
         break;
     default:
+        http_response_code(404);
         require __DIR__ . '/errors/404.php';
         break;
 }
