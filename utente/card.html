@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <Style>
+        .card {
+            width: 250px;
+            border-radius: 10%;
+            border: 1px solid #aaaaaa;
+        }
+
+        .card:hover{
+            opacity: 0.8;
+        }
+
+        .name {
+            font-size: 16px;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1;
+        }
+
+        .brand {
+            margin-top: 10px;            
+            font-size: 12px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .img {
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+            border-radius: 10%;
+        }
+
+        .name {
+            font-weight: bold;
+        }
+
+        .descr {
+            font-size: 12px;
+            max-height: 35px;
+            overflow: hidden;
+        }
+
+
+        span{
+            margin-left: 15px;
+        }
+
+        .carello{
+        position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 10px;
+            align-items: center;
+        }
+
+        .img_carrello{
+            width: 50px;
+            height: 50px;
+        }
+
+        .prezzo{
+            display: flex;
+            align-items: center;
+            font-size: 15pt
+        }
+        .quantità{
+            width: 30px;
+            height: 20px;
+            display: flex;
+        }
+
+        .text{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+    </Style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="img"><img class="img" src="https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dwb19da38e/large/GOCCIOLEALCIOCCOLATOPAVESI-8013355999143-5.png" alt=""></div>
+        <div class="descrizione">
+            <span class="brand text">Pavesi</span> <br>
+            <span class="name text">GOCCIOLE</span><br>
+            <span class="descr text">500gr</span><br>
+            
+        </div>
+        <div class="carello">
+        <input type="number" name="quantità" class="quantità" min="1" max="10" value="1">
+          <span class="prezzo text">2.50€</span>  <img class="img_carrello img" src="foto_carrello.png"></div>
+    </div>
+</body>
+
+</html>
