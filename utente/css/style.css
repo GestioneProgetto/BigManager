@@ -1,0 +1,88 @@
+.prodotti {
+    position: relative;
+    top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+.card {
+    width: 200px;
+    height: 400px;
+   margin: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+.card:hover{
+    opacity: 0.8;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1;
+}
+
+.brand {
+    margin-top: 10px;            
+    font-size: 12px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.img {
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 10%;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.descr {
+    font-size: 12px;
+    max-height: 35px;
+    overflow: hidden;
+}
+
+
+span{
+    margin-left: 15px;
+}
+
+.carello{
+position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.img_carrello{
+    width: 50px;
+    height: 50px;
+}
+
+.prezzo{
+    display: flex;
+    align-items: center;
+    font-size: 15pt
+}
+.quantita{
+    width: 30px;
+    height: 20px;
+}
+
+.text{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
