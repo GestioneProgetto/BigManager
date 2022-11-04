@@ -1,7 +1,5 @@
 /* generico */
 
-
-
 #container
 {
     position: absolute;
@@ -83,9 +81,6 @@
 /* accedi */
 
 
-
-
-
 #container_login
 {
     background-color: #fff;
@@ -157,79 +152,7 @@
     width: 35vw;
 }
 
-
-
 /* registrati */
-
-
-
-/*#container_registrati
-{
-    /* position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    height: 95vh;
-    width: 98vw;
-    background-color: #fff;
-    transition: opacity 0.5s;
-    z-index: -100;
-    opacity: 0;
-    border-radius: 15px; 
-
-    background-color: #fff;
-    /* width: 50%;
-    height: 35%; 
-    left: 50%;
-    top:35%;
-    transform: translate(-50%,0);
-    border-radius: 15px;
-    border: #000 solid 3px;
-}
-
-#chiudi_registrati
-{
-    position: relative;
-    width: 2vw;
-    aspect-ratio: 1;
-    font-size: 150%;
-    color: #000;
-    margin: 0;
-    top:2%;
-    left: 97%;
-    border-radius: 50%;
-}
-
-#titolo_registrati
-{
-    /* position: inherit;
-    top: 2%;
-    left: 50%;
-    transform: translate(-50%,0);
-    font-size: 50px;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    margin-bottom:2%;
-    width: fit-content; 
-
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    margin-bottom:2%;
-    width: 35vw;
-}
-
-#email_reg
-{
-    width: 45%;
-}
-
-#password_reg
-{
-    width: 45%;
-}*/
 
 #container_registrati
 {
