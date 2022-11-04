@@ -1,6 +1,6 @@
-<?php include('server.php') ?>
+<?php include 'core/functions.php' ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
     <head>
         <title>Registration system PHP and MySQL</title>
@@ -13,7 +13,7 @@
         </div>
 
         <form method="post" action="/login">
-            <?php include('errors.php'); ?>
+            <?php include "core/functions/errors.php";?>
             <div class="input-group">
                 <label>Username</label>
                 <input type="text" name="username">

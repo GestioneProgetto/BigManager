@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', '1');
+set_include_path("/spesa2.0/");
 
 $request = $_SERVER['REQUEST_URI'];
 
@@ -19,9 +21,9 @@ switch ($param[0]) {
         require __DIR__ . '/registration/index.php';
         break;
     default:
-        http_response_code(404);
-        require __DIR__ . '/errors/404.php';
-        break;
+        #http_response_code(404);
+        #require __DIR__ . '/errors/404.php';
+        #break;
 }
 
 //  https://codewithawa.com/posts/complete-user-registration-system-using-php-and-mysql-database
