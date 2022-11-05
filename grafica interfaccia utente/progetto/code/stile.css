@@ -1,5 +1,5 @@
 body{
-  background-color: orange;
+  background-color: rgb(255, 178, 61);
 }
 
 #logoImg{
@@ -148,13 +148,13 @@ body{
   }
 
   #search{
-    background-color: rgb(255, 192, 65);
+    background-color:rgba(255,164,88,255);
     height: 32px;
     width: 700px;
     text-align: center;
     position: absolute;
-    left:800px;
-    top:117px;
+    left:600px;
+    top:90px;
     border-color: black;
     border-style: solid;
   }
@@ -162,179 +162,238 @@ body{
   #carne{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:800px;
-    top:200px;
+    left:600px;
+    top:173px;
     border: 3px solid black;
   }
 
   #pesce{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:1077px;
-    top:200px;
+    left:877px;
+    top:173px;
     border: 3px solid black;
   }
 
   #frutta{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:1350px;
-    top: 200px;
+    left:1154px;
+    top: 173px;
     border: 3px solid black;
   }
 
   #verdura{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:800px;
-    top:350px;
+    left:600px;
+    top:323px;
     border: 3px solid black;
   }
 
   #bibite{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:1077px;
-    top:350px;
+    left:877px;
+    top:323px;
     border: 3px solid black;
   }
 
   #formaggi{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:1350px;
-    top: 350px;
+    left:1154px;
+    top: 323px;
     border: 3px solid black;
   }
 
   #snack{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:800px;
-    top:500px;
+    left:600px;
+    top:473px;
     border: 3px solid black;
   }
 
   #bio{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:1077px;
-    top:500px;
+    left:877px;
+    top:473px;
     border: 3px solid black;
   }
 
   #animali{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:1350px;
-    top: 500px;
+    left:1154px;
+    top: 473px;
     border: 3px solid black;
   }
 
   #casa{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:800px;
-    top:650px;
+    left:600px;
+    top:623px;
     border: 3px solid black;
   }
 
   #salute{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:1077px;
-    top:650px;
+    left:877px;
+    top:623px;
     border: 3px solid black;
   }
 
   #pane{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:1350px;
-    top: 650px;
+    left:1154px;
+    top: 623px;
     border: 3px solid black;
   }
 
   #surgelati{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:800px;
-    top:800px;
+    left:600px;
+    top:773px;
     border: 3px solid black;
   }
 
   #infanzia{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:1077px;
-    top:800px;
+    left:877px;
+    top:773px;
     border: 3px solid black;
   }
 
   #caffè{
     background-color: white;
     text-align: center;
-    background-color: rgb(255, 192, 65);
     height:100px;
     width: 150px;
     position: absolute;
-    left:1350px;
-    top: 800px;
+    left:1154px;
+    top: 773px;
     border: 3px solid black;
   }
+
+  /*Animazione e creazione menù a tendina*/
+  #menu__toggle {
+    opacity: 0;
+  }
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+  .menu__btn {
+    position: fixed;
+    top: 107px;
+    left: 350px;
+    width: 26px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    transition-duration: .25s;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -15px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 15px;
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #ECEFF1;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+
