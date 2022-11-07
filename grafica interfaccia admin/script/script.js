@@ -1,13 +1,16 @@
-document.getElementById("esci").onclick=function()
-{
-    alert("pippo");
-}
+$(document).ready(function () {
+    document.getElementById("esci").onclick = function () {
+        alert("pippo");
+    }
 
-function modificaProdotto(element) {
-    alert("modifica");
+    function modificaProdotto(element) {
+        //alert("modifica");
+
+    }
+
+    $(".modifica").click(function () {
+        console.log("dhjfksjhfakhaskjf");
+        modificaProdotto(this);
+    })
     
-}
-
-$('.modifica button').click(function() {
-    modificaProdotto(this);
-});
+})

@@ -188,6 +188,13 @@
     border-radius: 10%;
 }
 
+.img_popup {
+  width: 90%;
+  text-align: center;
+  margin-top: 5px;
+  border-radius: 10%;
+}
+
 .name {
     font-weight: bold;
 }
