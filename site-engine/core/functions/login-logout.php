@@ -1,15 +1,10 @@
 <?php
+include_once 'core/functions/connectToDB.php';
 session_start();
 // initializing variables
 $username = "";
 $email    = "";
 $errors = array();
-$db_servername = "spesaduezero.michelesottocasa.tech";
-$db_username = "spesa2.0";
-$db_password = "Spesa2.0";
-
-// connect to the database
-$db = mysqli_connect($db_servername, $db_username, $db_password, 'spesa2.0');
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
@@ -59,7 +54,7 @@ if (isset($_POST['reg_user'])) {
         mysqli_query($db, $query);
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in";
-        header('location: /logged');
+        header('location: /dashboard');
     }
 }
 
@@ -82,7 +77,7 @@ if (isset($_POST['login_user'])) {
         if (mysqli_num_rows($results) == 1) {
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
-            header('location: /logged');
+            header('location: /dashboard');
         } else {
             array_push($errors, "Wrong username/password combination");
         }

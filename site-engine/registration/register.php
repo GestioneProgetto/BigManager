@@ -1,4 +1,4 @@
-<?php include 'core/functions.php' ?>
+<?php include 'core/index.php' ?>
 <!DOCTYPE html>
 <html>
 
