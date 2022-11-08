@@ -1,9 +1,22 @@
 <?php
 
-function richiestaElementi($conn)
+$db_servername = "spesaduezero.michelesottocasa.tech";
+$db_username = "spesa2.0";
+$db_password = "Spesa2.0";
+$db_table = "spesa2.0";
+
+// Create connection
+$conn = mysqli_connect($db_servername, $db_username, $db_password, $db_table);
+// Check connection 
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+
+function richiestaElementi()
 {
     $sql = "SELECT * FROM prodotti";
-    $result = $conn->query($sql);
+    $result = $GLOBALS['conn']->query($sql);
 
     if ($result->num_rows > 0) {
         // output data of each row
@@ -12,7 +25,7 @@ function richiestaElementi($conn)
 
 
             <div class="card">
-                <div class="img"><img class="img" src="https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dwb19da38e/large/GOCCIOLEALCIOCCOLATOPAVESI-8013355999143-5.png" alt=""></div>
+                <div class="img"><img class="img_card" src="<?php echo 'http://spesaduezero.michelesottocasa.tech/images/'.$row['IDProdotto'].'.jpg' ?>" alt=""></div>
                 <div class="descrizione">
                     <span class="brand text"><?php echo $row["Marca"] ?></span> <br>
                     <span class="name text"><?php echo $row["Nome"] ?></span><br>
@@ -21,10 +34,10 @@ function richiestaElementi($conn)
                 </div>
                 <div class="carello">
                     <input type="number" name="quantità" class="quantita" min="1" max="10" value="1">
-                    <span class="prezzo text">
+                    <!-- <span class="prezzo text">
                         <?php
-                        $sql2 = "SELECT * FROM `prezzi-per-supermercato` WHERE IDProdotto =" .  $row["IDProdotto"];
-                        $result2 = $conn->query($sql2);
+                        /*$sql2 = "SELECT * FROM `prezzi-per-supermercato` WHERE IDProdotto =" .  $row["IDProdotto"];
+                        $result2 = $GLOBALS['conn']->query($sql2);
                         $i=0;
                         if ($result2->num_rows > 0) {
                             while ($row2 = $result2->fetch_assoc()) {
@@ -40,11 +53,20 @@ function richiestaElementi($conn)
                                 $prezzo= $array[$i];
                             }
                         }
-                        echo $prezzo.'€';
-                        ?>
+                        echo $prezzo.'€';*/
+                    ?>
 
-                    </span> <img name="carrello" id="<?php echo $row['IDProdotto']?>" class="img_carrello img" src="foto_carrello.png">
+                    </span> -->
+                     <img name="carrello" id="<?php echo $row['IDProdotto']?>" class="img_carrello img" src="foto_carrello.png">
                 </div>
+
+
+
+
+
+
+
+                
             </div>
 
 <?php
@@ -59,13 +81,15 @@ function richiestaElementi($conn)
 
 
 
-function aggiungialcarrello($conn){
+function aggiungialcarrello(){
    
     $id= $_GET['ID'];
     $username=$_GET['USERNAME'];
     $quantita=$_GET['QUANTITA'];
 
-    $sql = "INSERT INTO `carrello` (`UserName`, `IDProdotto`, `quantita`) VALUES ($username, $id, $quantita)";
-    $conn->query($sql); 
-}
+
+
+    $sql = "INSERT INTO `carrello` (`IDCarrello`, `UserName`, `IDProdotto`, `quantita`) VALUES (NULL, '".$username."', '".$id."', '".$quantita."');";
+    $GLOBALS['conn']->query($sql); 
+}  
 ?>
