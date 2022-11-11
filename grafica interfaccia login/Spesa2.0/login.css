@@ -13,6 +13,17 @@
     font-size: 20px;
 }
 
+.sfondo
+{
+    position: absolute;
+    opacity: 50%;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .textbox
 {
     position: inherit;
@@ -28,7 +39,6 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-family: consolas,Arial, Helvetica, sans-serif;
     transition: background-color .5s;
 }
 
@@ -84,8 +94,6 @@
 #container_login
 {
     background-color: #fff;
-    /* width: 50%;
-    height: 35%; */
     left: 50%;
     top:35%;
     transform: translate(-50%,0);
@@ -164,6 +172,7 @@
     transform: translate(-50%,0);
     border-radius: 15px;
     border: #fff solid 3px;
+    z-index: -100;
 }
 
 #email_registrati
@@ -221,5 +230,11 @@
     top:2%;
     left: 93%;
     border-radius: 50%;
-    z-index: 200;
 }
+
+@media only screen and (max-width: 768px) {
+    #titolo_accedi
+    {
+        width:50vw;
+    }
+  }
