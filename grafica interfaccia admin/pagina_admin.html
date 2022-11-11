@@ -5,31 +5,88 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 </head>
 
 <body>
-  <nav>
-    <div class="navbar">
-      <div class="container nav-container">
-        <input class="checkbox" type="checkbox" name="" id="" />
-        <div class="hamburger-lines">
-          <span class="line line1"></span>
-          <span class="line line2"></span>
-          <span class="line line3"></span>
-        </div>
-        <div class="logo">
-          <h1>logoLOGO</h1>
-        </div>
-        <div class="menu-items">
-          <li><a href="#">HOME</a></li>
-          <li><a href="aggiungi.html">AGGIUNGI</a></li>
-          <li><a id="esci">LOGOUT</a></li>
-        </div>
+  <div id="nav">
+    <nav role="navigation">
+      <div id="menuToggle">
+
+        <input type="checkbox" />
+
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+
+        <ul id="menu">
+          <a href="#">
+            <li>HOME</li>
+          </a>
+          <a id="aggiungi">
+            <li>AGGIUNGI</li>
+          </a>
+          <a href="#">
+            <li>LOGOUT</li>
+          </a>
+        </ul>
+      </div>
+      <div id="utente">CARREFOUR</div>
+
+      <img class="img_logo" src="img/logo.jpg">
+    </nav>
+
+  </div>
+
+  <div id="sfondo" class="sfondo">
+    <div id="popup">
+      <div class="text title">Modifica Prodotto</div><img class="img_popup"
+        src="https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dwb19da38e/large/GOCCIOLEALCIOCCOLATOPAVESI-8013355999143-5.png">
+      <div id="prodotto">
+        <form>
+          <label>marca:</label>
+          <input type="text" id="marca" value="ciao"> <br>
+          <label>prodotto:</label>
+          <input type="text" id="prodotto1"> <br>
+          <label>peso:</label>
+          <input type="text" id="peso"> <br>
+          <label>prezzo:</label>
+          <input type="text" id="prezzo"> <br>
+        </form><BR>
+        <DIV class="button">
+          <button id="close"> CLOSE</button>
+          <button id="save"> SAVE</button>
+        </DIV>
+      </div>
+      <div id="salva"></div>
+    </div>
+  </div>
+
+  <div id="sfondo1" class="sfondo">
+    <div id="popup">
+      <div class="text title">AGGIUNGI</div>
+      <img class="img_popup"
+        src="https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dwb19da38e/large/GOCCIOLEALCIOCCOLATOPAVESI-8013355999143-5.png">
+      <div id="prodotto">
+        <form>
+          <label>marca:</label>
+          <input type="text" id="marca"> <br>
+          <label>prodotto:</label>
+          <input type="text" id="prodotto"> <br>
+          <label>peso:</label> <input type="text" id="peso"> <br>
+          <label>prezzo:</label> <input type="text" id="prezzo"> <br>
+        </form><BR>
+        <DIV class="button">
+          <button id="close1"> CLOSE </button>
+          <button id="add"> AGGIUNGI</button>
+        </DIV>
       </div>
     </div>
-  </nav>
-  <div id="prodotti">
+  </div>
+
+  <div id="prodotti" class="prodotti">
+
 
     <div class="card">
       <div class="img"><img class="img"
@@ -39,64 +96,62 @@
         <span class="brand text" id="marca">Pavesi</span> <br>
         <span class="name text" id="prodotto">GOCCIOLE</span><br>
         <span class="descr text" id="peso">500gr</span><br>
-
       </div>
       <div class="carello">
-        <span class="prezzo text" id="prezzo">2.50€</span>
+        <span class="prezzo text" id="prezzo">2.50€</span> <br>
         <div class="modifica">
-          <!--https://speckyboy.com/free-shopping-cart-css-javascript/
-        jQuery Shopping Basket
-        -->
-          <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+
+          <button class="btn btn-primary" name="change">
             MODIFICA
+          </button>
+          <button class="btn btn-primary" name="delate">
+            ELIMINA
           </button>
         </div>
       </div>
     </div>
+  </div>
+  <script>
+    const boxes = document.getElementsByName('change');
+    boxes.forEach(box => {
+      box.addEventListener('click', function handleClick(event) {
+        console.log(event);
+        let foto = event.path[3].children[0].lastChild.currentSrc;
+        let marca = event.path[3].children[1].children[0].innerText;
+        let prodotto = event.path[3].children[1].children[2].innerHTML;
+        let grammi = event.path[3].children[1].children[4].innerHTML;
+        let prezzo = event.path[3].children[2].childNodes[1].innerHTML;
 
+        document.getElementById('marca').value = marca;
+        document.getElementById('prodotto1').value = prodotto;
+        document.getElementById('peso').value = grammi;
+        document.getElementById('prezzo').value = prezzo;
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            Modifica prodotto
-          </div>
-          <div class="modal-body">
-            <div class="img_popup"><img class="img"
-                src="https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dwb19da38e/large/GOCCIOLEALCIOCCOLATOPAVESI-8013355999143-5.png"
-                alt=""></div>
-            <div class="descrizione">
-              <span class="brand text" id="marca-popup">Pavesi</span><br>
-              <input type=“text”>
-              <span class="name text" id="prodotto-popup">GOCCIOLE</span><br>
-              <span class="descr text" id="peso-popup">500gr</span><br>
-            </div>
+        document.getElementById('sfondo').style.display = "inline";
+      });
+    });
 
-            <input type="number" name="quantità" class="quantità" min="1" max="10" value="1" id="quantita-popup">
-            <span class="prezzo text" id="prezzo-popup">2.50€</span>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    const boxes1 = document.getElementsByName('delate');
+    boxes1.forEach(box1 => {
+      box1.addEventListener('click', function handleClick(event) {
+        alert('ciao');
+      });
+    });
 
+    document.getElementById('aggiungi').addEventListener('click', function handleClick(event) {
+      document.getElementById('sfondo1').style.display = "inline";
+    });
+  </script>
 
+  <script>
+    document.getElementById('close').addEventListener('click', function handleClick(event) {
+      document.getElementById('sfondo').style.display = "none";
+    });
+    document.getElementById('close1').addEventListener('click', function handleClick(event) {
+      document.getElementById('sfondo1').style.display = "none";
+    });
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
-    <script src="script/script.js"></script>
+  </script>
 </body>
 
 </html>
