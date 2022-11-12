@@ -15,3 +15,7 @@ Cercando su internet è possibile notare come esistano alternative con funzional
 - [ ] Aggiunta supermercati preferiti
 - [ ] Visualizzazione offerte supermercati
 - [ ] Suddivisione singola spesa nei diversi supermercati (differenziando per convenienza)
+
+[Documentazione diagramma E/R](documentazione/Documentazione%20diagramma%20ER.md)
+
+[Tutte le idee del team](TeamIdea.md)
