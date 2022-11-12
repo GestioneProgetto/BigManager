@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', '1');
-set_include_path("/spesa2.0/");
+set_include_path(__DIR__);
 
 $request = $_SERVER['REQUEST_URI'];
 
@@ -22,6 +22,9 @@ switch ($param[0]) {
         break;
     case '/dashboard':
         require __DIR__ . '/pages/dashboard.php';
+        break;
+    case '/master':
+        require __DIR__ . '/pages/admin/index.html';
         break;
     default:
         http_response_code(404);

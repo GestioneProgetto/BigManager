@@ -1,5 +1,5 @@
 <?php
-include 'core/functions/supermarket.php';
+#include 'core/functions/supermarket.php';
 session_start();
 
 if (!isset($_SESSION['username'])) {

@@ -1,2 +1,2 @@
 <?php
-include_once ("core/functions/login-logout.php");
+include_once ("core/functions/connectToDB.php");

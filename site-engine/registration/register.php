@@ -1,4 +1,4 @@
-<?php include 'core/index.php' ?>
+<?php include 'core/functions/login-logout.php' ?>
 <!DOCTYPE html>
 <html>
 
