@@ -7,14 +7,16 @@ Per fare la spesa al cliente basterà aggiungere tutti i prodotti che vuole all�
 Cercando su internet è possibile notare come esistano alternative con funzionalità simili come “Intellilist” o “Doveconviene” ma queste ultime non presentano tutte le funzionalità come sopra descritto, ad esempio la funzione che consente di localizzare i negozi nelle vicinanze.
 
 
-**Funzionalità:**
+**Funzionalità versione base:**
 - [ ] Visualizzazione dei differenti totali per supermercato
 - [ ] Aggiunta prodotti dai supermercati
-- [ ] Aggiunta prodotti dai singoli utenti
-- [ ] Ricerca supermercati vicino all'utente
-- [ ] Aggiunta supermercati preferiti
-- [ ] Visualizzazione offerte supermercati
+- [ ] Aggiunta prodotti nel carrello dai singoli utenti
 - [ ] Suddivisione singola spesa nei diversi supermercati (differenziando per convenienza)
+
+**Funzionalità seconda versione:**
+- [ ] Ricerca supermercati vicino all'utente
+- [ ] Visualizzazione offerte supermercati
+- [ ] Aggiunta supermercati preferiti
 
 [Documentazione diagramma E/R](documentazione/Documentazione%20diagramma%20ER.md)
 
