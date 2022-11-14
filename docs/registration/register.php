@@ -27,7 +27,11 @@
             <?php include "core/functions/errors.php"; ?>
             <div id="email_registrati">
                 <label>Email:</label>
-                <input type="text" class="textbox" id="registrati_email">
+                <input type="text" name="email" class="textbox" id="registrati_email" value="<?php echo $email; ?>">
+            </div>
+            <div>
+                <label>Username</label>
+                <input type="text" name="username" value="<?php echo $username; ?>">
             </div>
             <div class="password_registrati" id="password1_registrati">
                 <label>
