@@ -82,7 +82,7 @@ if (isset($_POST['login_user'])) {
             else
                 $_SESSION['username'] = mysqli_fetch_all($results2)[0][0];
             $_SESSION['success'] = "You are now logged in";
-            $query = "SELECT IDSupermercato FROM supermercati WHERE AdminUser = " . $username;
+            $query = "SELECT IDSupermercato FROM supermercati WHERE AdminUser = '" . $username . "'";
             $result = mysqli_query($db, $query);
             if (mysqli_num_rows($result) > 0) {
                 $_SESSION['isSupermarketManager'] = 1;
