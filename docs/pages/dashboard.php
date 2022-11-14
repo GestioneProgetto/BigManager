@@ -64,7 +64,6 @@ if (!isset($_SESSION['username'])) {
                     </a></li>
             <?php endforeach;
         }
-
         ?>
         <li><a class="menu__item" href="/logged?logout=1">LogOut</a></li>
     </ul>

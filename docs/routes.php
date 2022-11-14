@@ -23,6 +23,9 @@ switch ($param[0]) {
     case '/dashboard':
         require __DIR__ . '/pages/dashboard.php';
         break;
+    case '/supermarket':
+        require __DIR__ . '/pages/supermarket.php';
+        break;
     default:
         http_response_code(404);
         require __DIR__ . '/errors/404.php';
