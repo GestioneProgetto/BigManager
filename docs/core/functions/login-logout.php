@@ -64,7 +64,7 @@ if (isset($_POST['login_user'])) {
     $password = mysqli_real_escape_string($db, $_POST['password']);
 
     if (empty($username)) {
-        array_push($errors, "Username is required");
+        array_push($errors, "Username or email is required");
     }
     if (empty($password)) {
         array_push($errors, "Password is required");
@@ -72,10 +72,15 @@ if (isset($_POST['login_user'])) {
 
     if (count($errors) == 0) {
         $password = md5($password);
-        $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-        $results = mysqli_query($db, $query);
-        if (mysqli_num_rows($results) == 1) {
-            $_SESSION['username'] = $username;
+        $query1 = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+        $results1 = mysqli_query($db, $query1);
+        $query2 = "SELECT * FROM users WHERE mail='$username' AND password='$password'";
+        $results2 = mysqli_query($db, $query2);
+        if (mysqli_num_rows($results1) == 1 || mysqli_num_rows($results2) == 1) {
+            if (mysqli_num_rows($results1) == 1)
+                $_SESSION['username'] = $username;
+            else
+                $_SESSION['username'] = mysqli_fetch_all($results2)[0][0];
             $_SESSION['success'] = "You are now logged in";
             $query = "SELECT IDSupermercato FROM supermercati WHERE AdminUser = " . $username;
             $result = mysqli_query($db, $query);
