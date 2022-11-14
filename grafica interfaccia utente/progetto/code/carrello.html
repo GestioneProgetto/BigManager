@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="stile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Spesa Intelligente</title>
+</head>
+<body>
+      <div id="nav">
+        <nav role="navigation">
+          <div id="menuToggle">
+    
+            <input type="checkbox" />
+    
+    
+            <span></span>
+            <span></span>
+            <span></span>
+    
+    
+            <ul id="menu">
+              <a href="index.html">
+                <li>HOME</li>
+              </a>
+              <a id="aggiungi">
+                <li>AGGIUNGI</li>
+              </a>
+              <a href="#">
+                <li>LOGOUT</li>
+              </a>
+            </ul>
+          </div>
+          <div id="utente">UTENTE</div>
+    
+          <img id="logoImg" src="../foto/spesa20-logo.png">
+        </nav>
+    
+      </div>    
+
+      <form>
+        <p>
+           <input type="text" id="search" >  
+           <input type="button" id="cerca" value="cerca">  
+        </p>
+      </form>
+
+      <div id="scontrino">
+
+      </div>
+
+      <style>
+        #scontrino{
+            height: 700px;
+            width: 400px;
+            border: 1px solid black;
+            position: absolute;
+            left: 750px;
+            top:195px;
+        }
+      </style>
