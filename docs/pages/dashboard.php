@@ -42,9 +42,45 @@ if (!isset($_SESSION['username'])) {
     <?php endif ?>
 </div>
 
-<img id="logoImg" src="/assets/images/system/logo.png">
+<div id="nav">
+    <nav role="navigation">
+        <div id="menuToggle">
 
-<!-- menù a tendina -->
+            <input type="checkbox"/>
+
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+
+            <ul id="menu">
+                <a id="chiSiamo.html">
+                    <li>CHI SIAMO</li>
+                </a>
+                <?php
+                $supermarketIDs = getSupermarketIDs($_SESSION['username']);
+                if (count($supermarketIDs) > 0) {
+                    foreach ($supermarketIDs as $currentID): ?>
+                        <li><b><a class="menu__item"
+                                  href="/supermarket?id=<?php echo $currentID; ?>">
+                                    <?php echo getSupermarketNameFromID($currentID); ?>
+                                    di <?php echo getSupermarketCityFromID($currentID) ?>
+                                </a></b></li>
+                    <?php endforeach;
+                }
+                ?>
+                <a href="/logged?logout=1">
+                    <li>LOGOUT</li>
+                </a>
+            </ul>
+        </div>
+        <div id="utente">Welcome <?php echo $_SESSION['username']; ?></div>
+
+        <img id="logoImg" src="/assets/images/system/logo.png">
+    </nav>
+
+    <!--img id="logoImg" src="/assets/images/system/logo.png">
 <div class="hamburger-menu">
     <input id="menu__toggle" type="checkbox"/>
     <label class="menu__btn" for="menu__toggle">
@@ -54,23 +90,23 @@ if (!isset($_SESSION['username'])) {
     <ul class="menu__box">
         <li><p class="menu__item">Welcome <?php echo $_SESSION['username']; ?></p></li>
         <?php
-        $supermarketIDs = getSupermarketIDs($_SESSION['username']);
-        if (count($supermarketIDs) > 0) {
-            foreach ($supermarketIDs as $currentID): ?>
+    $supermarketIDs = getSupermarketIDs($_SESSION['username']);
+    if (count($supermarketIDs) > 0) {
+        foreach ($supermarketIDs as $currentID): ?>
                 <li><a class="menu__item"
                        href="/supermarket?id=<?php echo $currentID; ?>" style="color: rgba(255,164,88,255)">
                         <?php echo getSupermarketNameFromID($currentID); ?>
                         di <?php echo getSupermarketCityFromID($currentID) ?>
                     </a></li>
             <?php endforeach;
-        }
-        ?>
+    }
+    ?>
         <li><a class="menu__item" href="/logged?logout=1">LogOut</a></li>
     </ul>
 </div>
 
 <div id="search">
-    cerca prodotto
+    cerca prodotto -->
 </div>
 
 <div id="carne">
