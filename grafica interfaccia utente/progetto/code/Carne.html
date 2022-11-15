@@ -3,34 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <script src="classe.js" type="text/Javascript"> </script>
     <link rel="stylesheet" href="stile.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Spesa Intelligente</title>
 </head>
 <body>
-    <A href="index.html">
-        <img id="logoImg" src="../foto/spesa20-logo.png">
-    </A>
+      <div id="nav">
+        <nav role="navigation">
+          <div id="menuToggle">
     
-    <nav>
-        <div class="navbar">
-          <div class="container nav-container">
-              <input class="checkbox" type="checkbox" name="" id="" />
-              <div class="hamburger-lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-              </div>  
-            <div class="menu-items">
-              <li><a href="#">Chi siamo</a></li>
-              <li><a href="#">Contattaci</a></li>
-              <li><a href="#">Accedi/Registrati</a></li>
-            </div>
+            <input type="checkbox" />
+    
+    
+            <span></span>
+            <span></span>
+            <span></span>
+    
+    
+            <ul id="menu">
+              <a href="index.html">
+                <li>HOME</li>
+              </a>
+              <a id="aggiungi">
+                <li>AGGIUNGI</li>
+              </a>
+              <a href="#">
+                <li>LOGOUT</li>
+              </a>
+            </ul>
           </div>
-        </div>
-      </nav>
+          <div id="utente">UTENTE</div>
+    
+          <img id="logoImg" src="../foto/spesa20-logo.png">
+        </nav>
+    
+      </div>    
 
-      <div id="search">
-        cerca prodotto
-      </div>
+      <form>
+        <p>
+           <input type="text" id="search" >  
+           <input type="button" id="cerca" value="cerca">  
+        </p>
+      </form>
+      
+
+      <Style>
+
+        .card {
+            width: 250px;
+            border-radius: 10%;
+            border: 1px solid #aaaaaa;
+            position: absolute;
+            left: 525px;
+            top: 200px;
+        }
+
+        .card:hover{
+            opacity: 0.8;
+        }
+
+        .card2 {
+            width: 250px;
+            border-radius: 10%;
+            border: 1px solid #aaaaaa;
+            position: absolute;
+            left: 825px;
+            top: 200px;
+        }
+
+        .card2:hover{
+            opacity: 0.8;
+        }
+
+        .card3 {
+            width: 250px;
+            border-radius: 10%;
+            border: 1px solid #aaaaaa;
+            position: absolute;
+            left: 1125px;
+            top: 200px;
+        }
+
+        .card3:hover{
+            opacity: 0.8;
+        }
+
+        
+
+        .name {
+            font-size: 16px;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1;
+        }
+
+        .brand {
+            margin-top: 10px;            
+            font-size: 12px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .img {
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+            border-radius: 10%;
+        }
+
+        .name {
+            font-weight: bold;
+        }
+
+        .descr {
+            font-size: 12px;
+            max-height: 35px;
+            overflow: hidden;
+        }
+
+
+        span{
+            margin-left: 15px;
+        }
+
+        .carello{
+        position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 10px;
+            align-items: center;
+        }
+
+        .img_carrello{
+            width: 50px;
+            height: 50px;
+        }
+
+        .img_carrello2{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top:50px;
+            right: 130px;
+        }
+
+        .prezzo{
+            display: flex;
+            align-items: center;
+            font-size: 15pt
+        }
+        .quantità{
+            width: 30px;
+            height: 20px;
+            display: flex;
+        }
+
+        .text{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+    </Style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="img"><img class="img" src="https://www.iperalspesaonline.it/photo/2019/05/11/42/main/large/pim-6637818-6637818-main-20190423-090644.jpg" alt=""></div>
+        <div class="descrizione">
+            <span class="brand text">Bovino Adulto</span> <br>
+            <span class="name text">Battuta A Coltello</span><br>
+            <span class="descr text">200gr</span><br>
+            
+        </div>
+        <div class="carello">
+        <input type="number" name="quantità" class="quantità" min="1" max="10" value="1">
+          <span class="prezzo text">09.99€</span> <img class="img_carrello img" src="https://www.lambrettaservice.it/carrello/icon.png"></div> 
+    </div>
+
+    <div class="card2">
+        <div class="img"><img class="img" src="https://www.iperalspesaonline.it/photo/2022/02/17/0/main/large/pim-6740509-6740509-main-20220216-123225.jpg" alt=""></div>
+        <div class="descrizione">
+            <span class="brand text">Bovino Adulto</span> <br>
+            <span class="name text">Burger Aberdeen</span><br>
+            <span class="descr text">200gr</span><br>
+            
+        </div>
+        <div class="carello">
+        <input type="number" name="quantità" class="quantità" min="1" max="10" value="1">
+          <span class="prezzo text">14.99€</span>  <img class="img_carrello img" src="https://www.lambrettaservice.it/carrello/icon.png"></div> 
+    </div>
+
+    <div class="card3">
+        <div class="img"><img class="img" src="https://www.iperalspesaonline.it/photo/2022/11/10/0/main/large/pim-6830964-6830964-main-20221109-090537.jpg" alt=""></div>
+        <div class="descrizione">
+            <span class="brand text">Scottona</span> <br>
+            <span class="name text">Hamburger</span><br>
+            <span class="descr text">240gr</span><br>
+            
+        </div>
+        <div class="carello">
+        <input type="number" name="quantità" class="quantità" min="1" max="10" value="1">
+          <span class="prezzo text">19.99€</span>  <img class="img_carrello img" src="https://www.lambrettaservice.it/carrello/icon.png"></div> 
+    </div>
+
+    <div> <A href="carrello.html"> <img class="img_carrello2 img" src="https://www.lambrettaservice.it/carrello/icon.png"> </A> </div>
+
+</body>
+
+</html>
