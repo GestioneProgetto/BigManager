@@ -1,103 +1,103 @@
 #logoImg {
-  width: 100px;
-  position: absolute;
-  right: 30px;
-  top: 10px;
-  z-index: -50;
+    width: 100px;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    z-index: -50;
 }
 
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 #utente {
-  width: 100px;
-  height: 30px;
-  margin: 30px auto;
-  z-index: 500;
-  font-size: large;
-  font-weight: bold;
+    width: 100px;
+    height: 30px;
+    margin: 30px auto;
+    z-index: 500;
+    font-size: large;
+    font-weight: bold;
 }
 
 #carneImg {
-  position: relative;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
 }
 
 #menuToggle {
-  display: block;
-  position: relative;
-  top: 50px;
-  left: 50px;
+    display: block;
+    position: relative;
+    top: 50px;
+    left: 50px;
 
-  z-index: 1;
+    z-index: 1;
 
-  -webkit-user-select: none;
-  user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 #menuToggle a {
-  text-decoration: none;
-  color: #232323;
+    text-decoration: none;
+    color: #232323;
 
-  transition: color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 #menuToggle a:hover {
-  color: gray;
+    color: gray;
 }
 
 
 #menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  opacity: 0;
-  /* hide this */
-  z-index: 2;
-  /* and place it over the hamburger */
+    opacity: 0;
+    /* hide this */
+    z-index: 2;
+    /* and place it over the hamburger */
 
-  -webkit-touch-callout: none;
+    -webkit-touch-callout: none;
 }
 
 /*
   * Just a quick hamburger
   */
 #menuToggle span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
 
-  background: #000000;
-  border-radius: 3px;
+    background: #000000;
+    border-radius: 3px;
 
-  z-index: 1;
+    z-index: 1;
 
-  transform-origin: 4px 0px;
+    transform-origin: 4px 0px;
 
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-  background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-  opacity 0.55s ease;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    opacity 0.55s ease;
 }
 
 #menuToggle span:first-child {
-  transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
 }
 
 #menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
 }
 
 /*
@@ -105,240 +105,97 @@
   * into a crossmark.
   */
 #menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
 }
 
 #menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
 }
 
 
 #menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
+    transform: rotate(-45deg) translate(0, -1px);
 }
 
 #menu {
-  position: absolute;
-  width: 300px;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
+    position: absolute;
+    width: 300px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
 
-  background: rgba(241, 120, 33, 0.792);
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
+    background: rgba(241, 120, 33, 0.792);
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
 
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
 
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
 #menu li {
-  padding: 10px 0;
-  font-size: 22px;
+    padding: 10px 0;
+    font-size: 22px;
 }
 
 /*
   * And let's slide it in from the left
   */
 #menuToggle input:checked ~ ul {
-  transform: none;
+    transform: none;
 }
 
 nav {
-  height: 125px;
-  border-bottom: solid rgb(241, 120, 33) 3px;
+    height: 125px;
+    border-bottom: solid rgb(241, 120, 33) 3px;
 }
 
 #search {
-  /*background-color:rgba(255,164,88,255);*/
-  height: 32px;
-  width: 700px;
-  text-align: center;
-  position: absolute;
-  left: 600px;
-  top: 125px;
-  border-color: black;
-  border-style: solid;
+    /*background-color:rgba(255,164,88,255);*/
+    height: 32px;
+    width: 700px;
+    text-align: center;
+    position: absolute;
+    left: 600px;
+    top: 125px;
+    border-color: black;
+    border-style: solid;
 }
 
 #cerca {
-  height: 36px;
-  width: 50px;
-  text-align: center;
-  position: absolute;
-  left: 1260px;
-  top: 125px;
-  border-color: black;
-  border-style: solid;
+    height: 36px;
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    left: 1260px;
+    top: 125px;
+    border-color: black;
+    border-style: solid;
 }
 
-#carne {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 600px;
-  top: 173px;
-  border: 3px solid black;
+.categoria {
+    background-color: white;
+    text-align: center;
+    height: 100px;
+    width: 150px;
+    border: 3px solid black;
+    margin: 15px;
 }
 
-#pesce {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 877px;
-  top: 173px;
-  border: 3px solid black;
+.categorie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
-#frutta {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 1154px;
-  top: 173px;
-  border: 3px solid black;
-}
-
-#verdura {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 600px;
-  top: 323px;
-  border: 3px solid black;
-}
-
-#bibite {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 877px;
-  top: 323px;
-  border: 3px solid black;
-}
-
-#formaggi {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 1154px;
-  top: 323px;
-  border: 3px solid black;
-}
-
-#snack {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 600px;
-  top: 473px;
-  border: 3px solid black;
-}
-
-#bio {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 877px;
-  top: 473px;
-  border: 3px solid black;
-}
-
-#animali {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 1154px;
-  top: 473px;
-  border: 3px solid black;
-}
-
-#casa {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 600px;
-  top: 623px;
-  border: 3px solid black;
-}
-
-#salute {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 877px;
-  top: 623px;
-  border: 3px solid black;
-}
-
-#pane {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 1154px;
-  top: 623px;
-  border: 3px solid black;
-}
-
-#surgelati {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 600px;
-  top: 773px;
-  border: 3px solid black;
-}
-
-#infanzia {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 877px;
-  top: 773px;
-  border: 3px solid black;
-}
-
-#caffè {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-  width: 150px;
-  position: absolute;
-  left: 1154px;
-  top: 773px;
-  border: 3px solid black;
+.rowcategoria {
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
 }
