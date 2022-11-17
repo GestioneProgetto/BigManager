@@ -1,4 +1,4 @@
 <?php
 
 // connect to the database
-$db = mysqli_connect($_ENV['HOST'], $_ENV['USERNAME'], $_ENV['PASSWORD'], $_ENV['DB']);
+$db = mysqli_connect(getenv('HOST'), getenv('USERNAME'), getenv('PASSWORD'), getenv('DB'));
