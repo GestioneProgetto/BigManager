@@ -99,23 +99,24 @@ $utente = $_SESSION['username'];
 <div id="sfondo1" class="sfondo">
     <div id="popup">
         <div class="text title">AGGIUNGI</div>
-        <img class="img_popup"
-             src="https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dwb19da38e/large/GOCCIOLEALCIOCCOLATOPAVESI-8013355999143-5.png">
-        <div id="prodotto">
-            <form>
+        <form action="/core/functions/productAdder.php" method="post" enctype="multipart/form-data">
+            <label for="productImage">Immagine: </label>
+            <input type="file" name="image" id="productImage" accept="image/*">
+            <div id="prodotto">
                 <label>marca:</label>
-                <input type="text" id="marca"> <br>
+                <input type="text" id="marca" name="marca"> <br>
                 <label>prodotto:</label>
-                <input type="text" id="prodotto"> <br>
-                <label>peso:</label> <input type="text" id="peso"> <br>
-                <label>prezzo:</label> <input type="text" id="prezzo"> <br>
-            </form>
-            <BR>
-            <DIV class="button">
-                <button id="close1"> CLOSE</button>
-                <button id="add"> AGGIUNGI</button>
-            </DIV>
-        </div>
+                <input type="text" id="prodotto" name="prodotto"> <br>
+                <label>peso:</label> <input type="text" id="peso" name="peso"> <br>
+                <label>prezzo:</label> <input type="text" id="prezzo" name="prezzo"> <br>
+                <input type="text" hidden name="supermarketID" value="<?php $_GET['id']; ?>">
+                <br>
+                <div class="button">
+                    <button id="close1"> CLOSE</button>
+                    <button id="add" type="submit" name="submit"> AGGIUNGI</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 
@@ -147,47 +148,7 @@ $utente = $_SESSION['username'];
     </div>
   </div> -->
 
-<script>
-    const boxes = document.getElementsByName('change');
-    boxes.forEach(box => {
-        box.addEventListener('click', function handleClick(event) {
-
-            console.log(event);
-            let foto = event.path[3].children[0].lastChild.currentSrc;
-            let marca = event.path[4].children[1].childNodes[1].innerText;
-            let prodotto = event.path[4].children[1].children[2].innerText;
-            let grammi = event.path[4].children[1].children[4].innerText;
-            let prezzo = event.path[2].childNodes[0].textContent.trim();
-
-            document.getElementById('marca').value = marca;
-            document.getElementById('prodotto1').value = prodotto;
-            document.getElementById('peso').value = grammi;
-            document.getElementById('prezzo').value = prezzo;
-
-            document.getElementById('sfondo').style.display = "inline";
-        });
-    });
-
-    const boxes1 = document.getElementsByName('delate');
-    boxes1.forEach(box1 => {
-        box1.addEventListener('click', function handleClick(event) {
-            alert('ciao');
-        });
-    });
-
-    document.getElementById('aggiungi').addEventListener('click', function handleClick(event) {
-        document.getElementById('sfondo1').style.display = "inline";
-    });
-</script>
-
-<script>
-    document.getElementById('close').addEventListener('click', function handleClick(event) {
-        document.getElementById('sfondo').style.display = "none";
-    });
-    document.getElementById('close1').addEventListener('click', function handleClick(event) {
-        document.getElementById('sfondo1').style.display = "none";
-    });
-</script>
+<script src="/assets/js/supermarket-product.js"></script>
 </body>
 
 </html>
