@@ -1,8 +1,8 @@
 <?php
-$db_servername = "spesaduezero.michelesottocasa.tech";
-$db_username = "spesa2.0";
-$db_password = "Spesa2.0";
-$db_table = "spesa2.0";
+$db_servername = "";
+$db_username = "";
+$db_password = "";
+$db_table = "";
 
 // Create connection
 $conn = mysqli_connect($db_servername, $db_username, $db_password, $db_table);
