@@ -37,11 +37,5 @@ function richiestaElementi()
         echo "0 results";
     }
 }
-
-
-
-function aggiungialcarrello($id,$username,$quantita){
-    $sql = "INSERT INTO `carrello` ( `UserName`, `IDProdotto`, `quantita`) VALUES ( '".$username."', '".$id."', '".$quantita."');";
-    $GLOBALS['db']->query($sql); 
-}  
+ 
 ?>

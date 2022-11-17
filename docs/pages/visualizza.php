@@ -161,7 +161,7 @@ if (!isset($_SESSION['username'])) {
             border-bottom: solid rgb(241, 120, 33) 3px;
         }
 
-       
+
 
         .categoria {
             background-color: white;
@@ -259,7 +259,7 @@ if (!isset($_SESSION['username'])) {
         .img_carrello2 {
             width: 70px;
             height: 70px;
-            margin:10px;
+            margin: 10px;
         }
 
         .undernav {
@@ -268,7 +268,7 @@ if (!isset($_SESSION['username'])) {
             align-items: center;
         }
 
-        .cerca{
+        .cerca {
             height: 30px;
         }
 
@@ -432,8 +432,8 @@ if (!isset($_SESSION['username'])) {
                 $id = event.path[0].id;
                 $quantita = event.path[1].children[0].value;
                 $username = event.path[4].children[0].childNodes[1].childNodes[3].id;
-               
-                window.location.href = "core/functions/aggiungiCarrello.php?ID=" + $id + "&USERNAME=" + $username + "&QUANTITA=" + $quantita;
+
+                window.location.href = "/aggiungi?ID=" + $id + "&USERNAME=" + $username + "&QUANTITA=" + $quantita;
             });
         });
     </script>
