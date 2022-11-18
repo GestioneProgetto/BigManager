@@ -109,7 +109,7 @@ $utente = $_SESSION['username'];
                 <input type="text" id="prodotto" name="prodotto"> <br>
                 <label>peso:</label> <input type="text" id="peso" name="peso"> <br>
                 <label>prezzo:</label> <input type="text" id="prezzo" name="prezzo"> <br>
-                <input type="text" hidden name="supermarketID" value="<?php $_GET['id']; ?>">
+                <input type="text" hidden name="supermarketID" value="<?php echo $_GET['id']; ?>">
                 <br>
                 <div class="button">
                     <button id="close1"> CLOSE</button>
@@ -126,27 +126,6 @@ $utente = $_SESSION['username'];
     ?>
 
 </div>
-
-<!-- <div class="card">
-    <div class="img"><img class="img" src="https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dwb19da38e/large/GOCCIOLEALCIOCCOLATOPAVESI-8013355999143-5.png" alt=""></div>
-    <div class="descrizione">
-      <span class="brand text" id="marca">Pavesi</span> <br>
-      <span class="name text" id="prodotto">GOCCIOLE</span><br>
-      <span class="descr text" id="peso">500gr</span><br>
-    </div>
-    <div class="carello">
-      <span class="prezzo text" id="prezzo">2.50€</span> <br>
-      <div class="modifica">
-
-        <button class="btn btn-primary" name="change">
-          MODIFICA
-        </button>
-        <button class="btn btn-primary" name="delate">
-          ELIMINA
-        </button>
-      </div>
-    </div>
-  </div> -->
 
 <script src="/assets/js/supermarket-product.js"></script>
 </body>
