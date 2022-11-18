@@ -6,7 +6,8 @@ $prodotto = $_POST['prodotto'];
 $peso = $_POST['peso'];
 $prezzo = $_POST['prezzo'];
 $IDSupermarket = $_POST['supermarketID'];
-echo $marca . ' ' . $prodotto . ' ' . $peso . ' ' . $prezzo . '<br><br>';
+$category = $_POST['categoria'];
+echo $marca . ' ' . $prodotto . ' ' . $peso . ' ' . $prezzo . ' ' . $category . '<br><br>';
 
 $status = $statusMsg = '';
 $status = 'error';
@@ -21,16 +22,28 @@ if (!empty($_FILES["image"]["name"])) {
         $image = $_FILES['image']['tmp_name'];
         $imgContent = addslashes(file_get_contents($image));
 
+        // Insert image content into database
+        $result = $db->query("SELECT * FROM prodotti WHERE Nome='$prodotto'");
+
+        $product = mysqli_fetch_assoc($result);
+
+        if ($product) {
+            header('Location: /supermarket?id=' . $IDSupermarket . '&add=already_exist');
+            die('product already exist');
+        }
+
+        $insert1 = $db->query("INSERT into prodotti (Nome, Marca,Peso, product_image, ID_Categoria) VALUES ('$prodotto','$marca','$peso','$imgContent', '$category');");
+
         $ID_Prodotto = mysqli_fetch_all($db->query("SELECT IDProdotto FROM `prodotti` WHERE Nome='$prodotto';"))[0][0];
 
         echo $ID_Prodotto . ' - ' . $IDSupermarket . ' v';
 
         $insert2 = $db->query("INSERT INTO `prezzi-per-supermercato` (`IDProdotto`, `IDSupermercato`, `Prezzo`) VALUES ('$ID_Prodotto','$IDSupermarket','$prezzo');");
 
-        if ($insert2) {
+        if ($insert1 && $insert2) {
             $status = 'success';
             $statusMsg = "File uploaded successfully.";
-        } else if ($insert2) {
+        } else if ($insert1) {
             $statusMsg = "File upload failed, please try again.";
         } else {
             $statusMsg = "Product not added";
@@ -45,4 +58,4 @@ if (!empty($_FILES["image"]["name"])) {
 // Display status message
 echo $statusMsg;
 
-header('Location : /supermarket?id=' . $IDSupermarket);
+header('Location: /supermarket?id=' . $IDSupermarket);

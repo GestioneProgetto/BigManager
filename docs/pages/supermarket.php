@@ -104,11 +104,21 @@ $utente = $_SESSION['username'];
             <input type="file" name="image" id="productImage" accept="image/*">
             <div id="prodotto">
                 <label>marca:</label>
-                <input type="text" id="marca" name="marca"> <br>
+                <input type="text" id="marca" name="marca" required> <br>
                 <label>prodotto:</label>
-                <input type="text" id="prodotto" name="prodotto"> <br>
-                <label>peso:</label> <input type="text" id="peso" name="peso"> <br>
-                <label>prezzo:</label> <input type="text" id="prezzo" name="prezzo"> <br>
+                <input type="text" id="prodotto" name="prodotto" required> <br>
+                <label>categoria:</label>
+                <select name="categoria" id="categoria" required>
+                    <option value=""></option>
+                    <?php
+                    $categories = $db->query("SELECT * FROM categorie");
+                    foreach (mysqli_fetch_all($categories) as $current_category) {
+                        echo '<option value="' . $current_category[0] . '">' . $current_category[0] . '</option>';
+                    }
+                    ?>
+                </select> <br>
+                <label>peso:</label> <input type="text" id="peso" name="peso" required> <br>
+                <label>prezzo:</label> <input type="text" id="prezzo" name="prezzo" required> <br>
                 <input type="text" hidden name="supermarketID" value="<?php echo $_GET['id']; ?>">
                 <br>
                 <div class="button">
