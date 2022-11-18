@@ -1,0 +1,224 @@
+/* generico */
+body
+{
+    background-color: rgb(255, 188, 100);
+}
+
+
+#container
+{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    user-select: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}
+
+.sfondo
+{
+    position: fixed;
+    opacity: 50%;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.textbox
+{
+    position: inherit;
+    overflow: hidden;
+    width: 99%;
+    height: 25px;
+    border: transparent;
+    background-color: #eee;
+}
+
+.bottone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color .5s;
+}
+
+.container{
+    position: absolute;
+}
+
+.label
+{
+    margin-bottom: 1%;
+}
+
+.mostrapass
+{
+    position: absolute;
+    aspect-ratio: 1;
+    height: 40%;
+    right: 0.5%;
+    bottom: 3.5%;
+    cursor: pointer;
+    transition: background-color .5s;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 50;
+}
+
+#logo
+{
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    left: 50%;
+    top:2.5%; 
+    transform: translate(-50%,0);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.container_bottoni
+{
+    height: 3vh;
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.aaa
+{
+    position: relative;
+    left: 50%;
+    width: 90%;
+    border-radius: 10px;
+    transform: translate(-50%,0);
+    color: #666;
+}
+
+.submit
+{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 50;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+/* accedi */
+
+
+#container_login
+{
+    background-color: #fff;
+    left: 50%;
+    top:35%;
+    transform: translate(-50%,0);
+    border-radius: 15px;
+    border: #fff solid 3px;
+}
+
+#accedi_bottone
+{
+    position: relative;
+    width: 10vw;
+    height: 100%;
+    border: #ccc solid 1px;
+    color: #666;
+    border-radius: 7px;
+    align-content: center;
+    text-align: center;
+    margin:0;
+}
+
+#registrati_bottone
+{
+    position: relative;
+    width: 10vw;
+    height: 100%;
+    border: #ccc solid 1px;
+    color: #666;
+    border-radius: 7px;
+    align-content: center;
+    text-align: center;
+    margin: 0;
+}
+
+
+
+#titolo_accedi
+{
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-bottom:2%;
+    width: 35vw;
+}
+
+/* registrati */
+
+#registrati_container
+{
+    background-color: #fff;
+    left: 50%;
+    top:35%;
+    transform: translate(-50%,0);
+    border-radius: 15px;
+    border: #fff solid 3px;
+}
+
+#avanti_bottone
+{
+    position: relative;
+    width: 10vw;
+    height: 100%;
+    border: #ccc solid 1px;
+    color: #666;
+    border-radius: 7px;
+    align-content: center;
+    text-align: center;
+    margin:0;
+}
+
+#titolo_registrati
+{
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-bottom:2%;
+    width: 35vw;
+}
+
+#registrati_chiudi
+{
+    position: absolute;
+    width: 2vw;
+    aspect-ratio: 1;
+    font-size: 150%;
+    color: #666;
+    margin: 0;
+    top:2%;
+    left: 93%;
+    border-radius: 50%;
+}
+
+
+
+@media only screen and (max-width: 769px) {
+    #titolo_accedi
+    {
+        width:50vw;
+    }
+  }
