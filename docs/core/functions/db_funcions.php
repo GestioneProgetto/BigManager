@@ -31,8 +31,10 @@ function richiesta($supermarketID)
                 <div class="card">
                     <div class="img">
                         <img class="img_card"
-                             src="<?php echo '/assets/images/user-upload/' . $row['IDProdotto'] . '.jpg' ?>"
-                             alt="">
+                             src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['product_image']); ?>"/>
+                        <!--<img class="img_card"
+                             src="<?php /*echo '/assets/images/user-upload/' . $row['IDProdotto'] . '.jpg' */ ?>"
+                             alt="">-->
                     </div>
                     <div class="descrizione">
                         <span class="brand text"><?php echo $row["Marca"] ?></span> <br>
