@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login - Spesa 2.0</title>
+</head>
+
+<body>
+    <div id="container">
+        <img src="img/sfondo.jpg" alt="sfondo" class="sfondo">
+
+
+        <!-- accedi -->
+
+        
+
+        <div id="logo">
+            <img src="img/logo.png" alt="logo" style="height:100%; width:100%;object-fit: fill;">
+        </div>
+        <div class="container" id="container_login">
+                <p id="titolo_accedi">
+                    Accedi
+                </p>
+                <div id="email_login">
+                    <p class="label">
+                        Email:
+                    </p>
+                    <input type="text" class="textbox" id="accedi_email">
+                </div>
+                <div id="password_login">
+                    <p class="label">
+                        Password:
+                    </p>
+                    <input type="password" class="textbox" id="accedi_password">
+                    <div class="mostrapass" id="mostrapassaccedi">
+                        <img src="img/occhio_nero.png" alt="mostra password" style="height:100%; width:100%;object-fit: fill;" id="occhio_n_accedi" hidden>
+                        <img src="img/occhio_grigio.png" alt="mostra password" style="height:100%; width:100%;object-fit: fill;" id="occhio_g_accedi">
+                    </div>
+                </div>
+                <div class="container_bottoni">
+                    <div class="bottone" id="bottone_registrati">
+                        Registrati
+                    </div>
+                    <div class="bottone" id="bottone_accedi">
+                        Accedi
+                    </div>
+                </div>
+        </div>
+
+
+
+        <!-- Registrati -->
+
+
+        
+        <div class="container" id="container_registrati">
+            <p id="titolo_registrati">
+                Registrati
+            </p>
+
+            <div class="bottone" id="chiudi_registrati">
+                X
+            </div>
+
+            <div id="email_registrati">
+                <p class="label">
+                    Email:
+                </p>
+                <input type="text" class="textbox" id="registrati_email">
+            </div>
+            <div class="password_registrati" id="password1_registrati">
+                <p class="label">
+                    Nuova password:
+                </p>
+                <input type="password" class="textbox" id="registrati_password1">
+                <div class="mostrapass" id="mostrapassregistrati1">
+                    <img src="img/occhio_nero.png" alt="mostra password" style="height:100%; width:100%;object-fit: fill;" id="occhio_n_registrati1" hidden>
+                    <img src="img/occhio_grigio.png" alt="mostra password" style="height:100%; width:100%;object-fit: fill;" id="occhio_g_registrati1">
+                </div>
+            </div>
+            <div class="password_registrati" id="password2_registrati">
+                <p class="label">
+                    Ripeti la password:
+                </p>
+                <input type="password" class="textbox" id="registrati_password2">
+                <div class="mostrapass" id="mostrapassregistrati2">
+                    <img src="img/occhio_nero.png" alt="mostra password" style="height:100%; width:100%;object-fit: fill;" id="occhio_n_registrati2" hidden>
+                    <img src="img/occhio_grigio.png" alt="mostra password" style="height:100%; width:100%;object-fit: fill;" id="occhio_g_registrati2">
+                </div>
+            </div>
+            <div class="container_bottoni">
+                <div class="bottone" id="bottone_avanti">
+                    Avanti
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="login.js"></script>
+</body>
+
+</html>
