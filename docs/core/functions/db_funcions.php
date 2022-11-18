@@ -53,9 +53,13 @@ function richiesta($supermarketID)
                                 <button class="btn btn-primary" name="change">
                                     MODIFICA
                                 </button>
-                                <button class="btn btn-primary" name="delate">
-                                    ELIMINA
-                                </button>
+                                <form action="/core/functions/productRemover.php" method="post">
+                                    <input type="text" name="productID" id="productID"
+                                           value="<?php echo $row["IDProdotto"] ?>" hidden>
+                                    <button class="btn btn-primary" name="delate">
+                                        ELIMINA
+                                    </button>
+                                </form>
                             </div>
                     </div>
                 </div>
