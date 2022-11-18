@@ -14,6 +14,13 @@ if (isset($_POST['reg_user'])) {
     $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
     $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
+    $name = mysqli_real_escape_string($db, $_POST['name']);
+    $surname = mysqli_real_escape_string($db, $_POST['surname']);
+    $birthday = mysqli_real_escape_string($db, $_POST['birthday']);
+    $city = mysqli_real_escape_string($db, $_POST['city']);
+    $address = mysqli_real_escape_string($db, $_POST['address']);
+    $province = mysqli_real_escape_string($db, $_POST['province']);
+
     // form validation: ensure that the form is correctly filled ...
     // by adding (array_push()) corresponding error unto $errors array
     if (empty($username)) {
@@ -36,11 +43,11 @@ if (isset($_POST['reg_user'])) {
     $user = mysqli_fetch_assoc($result);
 
     if ($user) { // if user exists
-        if ($user['username'] === $username) {
+        if ($user['UserName'] == $username) {
             array_push($errors, "Username already exists");
         }
 
-        if ($user['email'] === $email) {
+        if ($user['Mail'] == $email) {
             array_push($errors, "email already exists");
         }
     }
@@ -52,6 +59,15 @@ if (isset($_POST['reg_user'])) {
         $query = "INSERT INTO users (username, Mail, Password) 
   			  VALUES('$username', '$email', '$password')";
         mysqli_query($db, $query);
+
+        if ($birthday != "")
+            $query = "INSERT INTO `usersData` (`UserName`, `Nome`, `Cognome`, `DataNascita`, `Indirizzo`, `Città`, `Provincia`)
+            VALUES ('$username', '$name', '$surname', '$birthday', '$address', '$city', '$province')";
+        else
+            $query = "INSERT INTO `usersData` (`UserName`, `Nome`, `Cognome`, `Indirizzo`, `Città`, `Provincia`)
+            VALUES ('$username', '$name', '$surname', '$address', '$city', '$province')";
+        mysqli_query($db, $query);
+
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in";
         header('location: /dashboard');

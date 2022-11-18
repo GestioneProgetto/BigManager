@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/style/login.css">
+    <link rel="stylesheet" href="/assets/style/login-register.css">
     <title>Login - Spesa 2.0</title>
 </head>
 
@@ -22,13 +22,13 @@
         </p>
         <form method="post" action="/login">
             <?php include "core/functions/errors.php"; ?>
-            <div id="email_login">
+            <div class="aaa">
                 <label>Username/Email:</label>
-                <input type="text" class="textbox" id="accedi_email" name="username">
+                <input type="text" class="textbox" id="accedi_email" name="username" required>
             </div>
-            <div id="password_login">
+            <div class="aaa">
                 <label>Password:</label>
-                <input type="password" class="textbox" id="accedi_password" name="password">
+                <input type="password" class="textbox" id="accedi_password" name="password" required>
                 <div class="mostrapass" id="mostrapassaccedi">
                     <img src="/assets/images/system/occhio_nero.png" alt="mostra password"
                          style="height:100%; width:100%;object-fit: fill;" id="occhio_n_accedi" hidden>
@@ -37,11 +37,15 @@
                 </div>
             </div>
             <div class="container_bottoni">
-                <div class="bottone" id="bottone_registrati">
-                    <a href="/register">Registrati</a>
-                </div>
-                <div class="bottone" id="bottone_accedi">
-                    <button type="submit" class="" name="login_user">Accedi</button>
+                <a href="/register" style="text-decoration-line: none;">
+                    <div class="bottone" id="registrati_bottone">
+                        Registrati
+                    </div>
+                </a>
+                <div class="bottone" id="accedi_bottone">
+                    Accedi
+                    <button type="submit" class="submit" name="login_user">
+                    </button>
                 </div>
             </div>
         </form>

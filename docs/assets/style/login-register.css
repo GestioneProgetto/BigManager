@@ -1,35 +1,31 @@
 /* generico */
-
-#container
-{
-    position: absolute;
-    top:0;
-    left:0;
-    height: 100vh;
-    width: 100%;
+body {
     background-color: rgb(255, 188, 100);
+}
+
+
+#container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     user-select: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
 }
-a{
-    text-decoration: none;
-    color: #666;
-}
 
-.sfondo
-{
-    position: absolute;
+.sfondo {
+    position: fixed;
     opacity: 50%;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
-.textbox
-{
+.textbox {
     position: inherit;
     overflow: hidden;
     width: 99%;
@@ -38,7 +34,7 @@ a{
     background-color: #eee;
 }
 
-.bottone{
+.bottone {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,17 +42,15 @@ a{
     transition: background-color .5s;
 }
 
-.container{
+.container {
     position: absolute;
 }
 
-label
-{
+label {
     margin-bottom: 1%;
 }
 
-.mostrapass
-{
+.mostrapass {
     position: absolute;
     aspect-ratio: 1;
     height: 40%;
@@ -69,20 +63,18 @@ label
     z-index: 50;
 }
 
-#logo
-{
+#logo {
     position: absolute;
     height: 250px;
     width: 250px;
     left: 50%;
-    top:2.5%; 
-    transform: translate(-50%,0);
+    top: 2.5%;
+    transform: translate(-50%, 0);
     border-radius: 50%;
     overflow: hidden;
 }
 
-.container_bottoni
-{
+.container_bottoni {
     height: 3vh;
     width: 100%;
     margin-top: 5%;
@@ -91,43 +83,41 @@ label
     justify-content: space-evenly;
 }
 
+.aaa {
+    position: relative;
+    left: 50%;
+    width: 90%;
+    border-radius: 10px;
+    transform: translate(-50%, 0);
+    color: #666;
+}
+
+.submit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 50;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
 
 /* accedi */
 
 
-#container_login
-{
+#container_login {
     background-color: #fff;
     left: 50%;
-    top:35%;
-    transform: translate(-50%,0);
+    top: 35%;
+    transform: translate(-50%, 0);
     border-radius: 15px;
     border: #fff solid 3px;
 }
 
-#email_login
-{
-    position: relative;
-    left: 50%;
-    width: 90%;
-    border-radius: 10px;
-    transform: translate(-50%,0);
-    color: #666;
-}
-
-#password_login
-{
-    position: relative;
-    left: 50%;
-    width: 90%;
-    border-radius: 10px;
-    box-decoration-break: none;
-    transform: translate(-50%,0);
-    color: #666;
-}
-
-#bottone_accedi
-{
+#accedi_bottone {
     position: relative;
     width: 10vw;
     height: 100%;
@@ -136,11 +126,10 @@ label
     border-radius: 7px;
     align-content: center;
     text-align: center;
-    margin:0;
+    margin: 0;
 }
 
-#bottone_registrati
-{
+#registrati_bottone {
     position: relative;
     width: 10vw;
     height: 100%;
@@ -153,54 +142,27 @@ label
 }
 
 
-
-#titolo_accedi
-{
+#titolo_accedi {
     font-size: 30px;
     display: flex;
     align-items: center;
-    justify-content:center;
-    margin-bottom:2%;
+    justify-content: center;
+    margin-bottom: 2%;
     width: 35vw;
 }
 
 /* registrati */
 
-#container_registrati
-{
+#registrati_container {
     background-color: #fff;
-    /* width: 50%;
-    height: 35%; */
     left: 50%;
-    top:35%;
-    transform: translate(-50%,0);
+    top: 35%;
+    transform: translate(-50%, 0);
     border-radius: 15px;
     border: #fff solid 3px;
 }
 
-#email_registrati
-{
-    position: relative;
-    left: 50%;
-    width: 90%;
-    border-radius: 10px;
-    transform: translate(-50%,0);
-    color: #666;
-}
-
-.password_registrati
-{
-    position: relative;
-    left: 50%;
-    width: 90%;
-    border-radius: 10px;
-    box-decoration-break: none;
-    transform: translate(-50%,0);
-    color: #666;
-}
-
-#bottone_avanti
-{
+#avanti_bottone {
     position: relative;
     width: 10vw;
     height: 100%;
@@ -209,35 +171,33 @@ label
     border-radius: 7px;
     align-content: center;
     text-align: center;
-    margin:0;
+    margin: 0;
 }
 
-#titolo_registrati
-{
+#titolo_registrati {
     font-size: 30px;
     display: flex;
     align-items: center;
-    justify-content:center;
-    margin-bottom:2%;
+    justify-content: center;
+    margin-bottom: 2%;
     width: 35vw;
 }
 
-#chiudi_registrati
-{
+#registrati_chiudi {
     position: absolute;
     width: 2vw;
     aspect-ratio: 1;
     font-size: 150%;
     color: #666;
     margin: 0;
-    top:2%;
+    top: 2%;
     left: 93%;
     border-radius: 50%;
 }
 
-@media only screen and (max-width: 768px) {
-    #titolo_accedi
-    {
-        width:50vw;
+
+@media only screen and (max-width: 769px) {
+    #titolo_accedi {
+        width: 50vw;
     }
-  }
+}
