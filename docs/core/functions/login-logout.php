@@ -1,5 +1,5 @@
 <?php
-include_once 'core/index.php';
+include_once 'core/functions/connectToDB.php';
 session_start();
 // initializing variables
 $username = "";

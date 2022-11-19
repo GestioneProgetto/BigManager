@@ -4,7 +4,6 @@ include_once 'core/index.php';
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
-
 function richiesta($supermarketID)
 {
     $sql = 'SELECT * FROM `prezzi-per-supermercato` WHERE IDSupermercato ="' . $supermarketID . '"';
@@ -26,6 +25,8 @@ function richiesta($supermarketID)
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
 
+                $GLOBALS['IDPrdotto'] = $row['IDProdotto'];
+
                 ?>
 
                 <div class="card">
@@ -37,6 +38,7 @@ function richiesta($supermarketID)
                         <span class="brand text"><?php echo $row["Marca"] ?></span> <br>
                         <span class="name text"><?php echo $row["Nome"] ?></span><br>
                         <span class="descr text"><?php echo $row["Peso"] . 'g' ?></span><br>
+                        <span hidden><?php echo $row['IDProdotto'] ?></span>
 
                     </div>
                     <div class="carello">
@@ -46,10 +48,15 @@ function richiesta($supermarketID)
                             echo $prezzo[$i] . '€';
                             ?>
                             <div class="modifica">
-
-                                <button class="btn btn-primary" name="change">
-                                    MODIFICA
-                                </button>
+                                <form action="" method="get">
+                                    <input type="text" name="id" id="id"
+                                           value="<?php echo $supermarketID ?>" hidden>
+                                    <input type="text" name="productID" id="productID"
+                                           value="<?php echo $row["IDProdotto"] ?>" hidden>
+                                    <button class="btn btn-primary">
+                                        MODIFICA
+                                    </button>
+                                </form>
                                 <form action="/core/functions/productRemover.php" method="post">
                                     <input type="text" name="productID" id="productID"
                                            value="<?php echo $row["IDProdotto"] ?>" hidden>

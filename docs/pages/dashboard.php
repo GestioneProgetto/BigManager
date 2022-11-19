@@ -1,13 +1,5 @@
 <?php
-#include 'core/functions/supermarket.php';
 include_once 'core/index.php';
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    $_SESSION['msg'] = "You must log in first";
-    header('location: /login');
-}
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -67,13 +59,13 @@ if (!isset($_SESSION['username'])) {
 <div class="undernav">
         <A href="/carrello"> <img class="img_carrello2" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/foto_carrello.png"> </A>
     </div>
-    <div class="categorie">
-        <div class="rowcategoria">
-            <?php
-            echo richiestaCategorie();
-            ?>
-         </div>
+<div class="categorie">
+    <div class="rowcategoria">
+        <?php
+        echo richiestaCategorie();
+        ?>
     </div>
+</div>
 
 
 </body>

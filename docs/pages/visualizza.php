@@ -1,13 +1,5 @@
 <?php
-#include 'core/functions/supermarket.php';
 include_once 'core/index.php';
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    $_SESSION['msg'] = "You must log in first";
-    header('location: /login');
-}
-
 if(!isset($_GET['categoria'])){
     header("Location: http://spesaduezero.michelesottocasa.tech/dashboard");
 }
@@ -104,8 +96,8 @@ if(!isset($_GET['categoria'])){
             transform-origin: 4px 0px;
 
             transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-                background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-                opacity 0.55s ease;
+            background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            opacity 0.55s ease;
         }
 
         #menuToggle span:first-child {
@@ -116,19 +108,19 @@ if(!isset($_GET['categoria'])){
             transform-origin: 0% 100%;
         }
 
-        #menuToggle input:checked~span {
+        #menuToggle input:checked ~ span {
             opacity: 1;
             transform: rotate(45deg) translate(-2px, -1px);
             background: #232323;
         }
 
-        #menuToggle input:checked~span:nth-last-child(3) {
+        #menuToggle input:checked ~ span:nth-last-child(3) {
             opacity: 0;
             transform: rotate(0deg) scale(0.2, 0.2);
         }
 
 
-        #menuToggle input:checked~span:nth-last-child(2) {
+        #menuToggle input:checked ~ span:nth-last-child(2) {
             transform: rotate(-45deg) translate(0, -1px);
         }
 
@@ -155,7 +147,7 @@ if(!isset($_GET['categoria'])){
             font-size: 22px;
         }
 
-        #menuToggle input:checked~ul {
+        #menuToggle input:checked ~ ul {
             transform: none;
         }
 
@@ -163,7 +155,6 @@ if(!isset($_GET['categoria'])){
             height: 125px;
             border-bottom: solid rgb(241, 120, 33) 3px;
         }
-
 
 
         .categoria {
@@ -425,25 +416,25 @@ if(!isset($_GET['categoria'])){
     include_once "core/functions/visualizzazioneProdotti.php";
     ?>
 
-    <div class="prodotti">
-        <?php
-        $result = richiestaElementi();
-        ?>
-    </div>
+<div class="prodotti">
+    <?php
+    $result = richiestaElementi();
+    ?>
+</div>
 
 
-    <script>
-        const boxes = document.getElementsByName('carrello');
-        boxes.forEach(box => {
-            box.addEventListener('click', function handleClick(event) {
-                $id = event.path[0].id;
-                $quantita = event.path[1].children[0].value;
-                $username = event.path[4].children[0].childNodes[1].childNodes[3].id;
+<script>
+    const boxes = document.getElementsByName('carrello');
+    boxes.forEach(box => {
+        box.addEventListener('click', function handleClick(event) {
+            $id = event.path[0].id;
+            $quantita = event.path[1].children[0].value;
+            $username = event.path[4].children[0].childNodes[1].childNodes[3].id;
 
-                window.location.href = "/aggiungi?ID=" + $id + "&USERNAME=" + $username + "&QUANTITA=" + $quantita;
-            });
+            window.location.href = "/aggiungi?ID=" + $id + "&USERNAME=" + $username + "&QUANTITA=" + $quantita;
         });
-    </script>
+    });
+</script>
 
 
 
