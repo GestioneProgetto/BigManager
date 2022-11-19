@@ -49,7 +49,7 @@
     width: 40%;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    overflow-y: visible;
     overflow-x: hidden;
 }
 
@@ -67,7 +67,7 @@
     border-top: solid orange 2px;
     border-bottom: solid orange 2px;
     margin: 2px;
-    height: 15%;
+    height: 65px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -102,6 +102,20 @@
     font-weight: bold;
 }
 
+.carrelloprodotto{
+    font-weight: bold;
+}
+
+
+#aref {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
 .gg-close {
     box-sizing: border-box;
     position: absolute;
@@ -132,10 +146,4 @@
 
 .gg-close::after {
     transform: rotate(-45deg)
-}
-
-.aref{
-    position: relative;
-    height: 100%;
-    width: 100%;
 }
