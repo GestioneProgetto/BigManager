@@ -23,24 +23,98 @@ function richiestacarrello()
                             <div class="carrelloprodotto"><?php echo $row1["Nome"] ?></div>
                             <div class="carrellopeso"><?php echo $row1["Peso"] . 'g' ?></div>
                         </div>
-                        <input type="number" name="carrelloquantita" value="<?php echo $row["quantita"]?>" min="1" max="10">
-                        
-                        <button>elimina</button>
+                        <input type="text" readonly name="carrelloquantita" value="<?php echo "N° " . $row["quantita"] ?>" style=" width: 50px; border: transparent;">
+
+                        <form action="/core/functions/eliminaDaCarrello.php" method="post">
+                            <input type="text" name="productID" id="productID" value="<?php echo $row["IDProdotto"] ?>" hidden>
+                            <button>
+                                ELIMINA
+                            </button>
+                        </form>
                     </div>
-<?php
+        <?php
                 }
             }
         }
     }
 }
 
-function calcolototali(){
+function calcolototali()
+{
+    $supermercati[0] = 0;
+    $totali[] = 0;
+    $sql = 'SELECT * FROM `supermercati`';
+    $result = $GLOBALS['db']->query($sql);
+    $i = 0;
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $supermercati[$i] = $row['IDSupermercato'];
+            $totali[$i] = 0;
+            $i++;
+        }
+    }
 
+    $prodotti[0] = 0;
+    $quantita[0] = 0;
+    $i = 0;
+    $sql = 'SELECT * FROM `carrello` WHERE UserName ="' . $_SESSION['username'] . '";';
+    $result = $GLOBALS['db']->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $prodotti[$i] = $row['IDProdotto'];
+            $quantita[$i] = $row['quantita'];
+            $i++;
+        }
+    }
+
+    for ($j = 0; $j < count($prodotti); $j++) {
+        for ($i = 0; $i < count($supermercati); $i++) {
+            $sql = 'SELECT * FROM `prezzi-per-supermercato` WHERE IDProdotto ="' . $prodotti[$j]  . '"AND IDSupermercato="' . $supermercati[$i] . '" ;';
+            $result = $GLOBALS['db']->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $totali[$i] = $totali[$i] + $row['Prezzo'] * $quantita[$j];
+                }
+            }
+        }
+    }
+
+    do
+    {
+            $scambiato = false;
+            for( $i = 0, $c = count( $totali ) - 1; $i < $c; $i++ )
+            {
+                if( $totali[$i] > $totali[$i + 1] )
+        {
+                    $temp = $totali[$i + 1];
+                    $totali[$i + 1] = $totali[$i];
+                    $totali[$i] = $temp;
+
+                    $temp1 = $supermercati[$i + 1];
+                    $supermercati[$i + 1] = $supermercati[$i];
+                    $supermercati[$i] = $temp1;
+                    $scambiato = true;
+        }
+            }
+    }
+    while($scambiato);
+
+    $nome = "";
+    for ($i = 0; $i < count($supermercati); $i++) {
+        $sql = 'SELECT * FROM `supermercati` WHERE IDSupermercato="' . $supermercati[$i] . '" ;';
+        $result = $GLOBALS['db']->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $nome = $row['Nome'];
+            }
+        }
+        ?>
+        <div class="cardprezzi">
+            <div class="nomesupermercato"> <?php echo $nome ?></div>
+            <div class="prezzosupermercato"> <?php echo $totali[$i] . "€" ?></div>
+        </div>
+<?php
+    }
 }
 
 ?>
-
-<div class="cardprezzi">
-                        <div class="nomesupermercato"> carrefour</div>
-                        <div class="prezzosupermercato"> 150.00€</div>
-</div>

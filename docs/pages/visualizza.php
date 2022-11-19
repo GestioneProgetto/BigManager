@@ -62,7 +62,7 @@ if(!isset($_GET['categoria'])){
 
     <br>
     <div class="undernav">
-        <A href="/carrello?utente=<?php echo $_SESSION['username']; ?>"> <img class="img_carrello2" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/foto_carrello.png"> </A>
+        <A href="/carrello"> <img class="img_carrello2" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/foto_carrello.png"> </A>
         <form>
             <p>
                 <input type="text" class="cerca">

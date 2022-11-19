@@ -57,7 +57,7 @@ include_once 'core/index.php';
 <?php include 'core/functions/richiestaCategorie.php' ?>
 <br>
 <div class="undernav">
-        <A href="/carrello?utente=<?php echo $_SESSION['username']; ?>"> <img class="img_carrello2" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/foto_carrello.png"> </A>
+        <A href="/carrello"> <img class="img_carrello2" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/foto_carrello.png"> </A>
     </div>
 <div class="categorie">
     <div class="rowcategoria">

@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="assets/style/carrello.css">
 </head>
 
-<body>  
+<body>
     <?php include "core/functions/gestioneCarrello.php" ?>
-    
+
     <div id="sfondo" class="sfondo">
         <div id="popup">
             <i class="gg-close"></i>
@@ -19,13 +19,12 @@
             <div class="text title">CARRELLO</div>
             <div class="carrello">
                 <div class="prodotti">
-                    <?php richiestacarrello()?>
+                    <?php richiestacarrello() ?>
                 </div>
                 <div class="supermercati">
-                <?php calcolototali()?>
+                    <?php calcolototali() ?>
                 </div>
             </div>
-
         </div>
 
 </body>
