@@ -9,8 +9,6 @@ $param = explode('?', $request);
 switch ($param[0]) {
     case '/':
     case '':
-        require __DIR__ . '/pages/index.html';
-        break;
     case '/login':
         require __DIR__ . '/registration/login.php';
         break;
