@@ -8,6 +8,9 @@ if (!isset($_SESSION['username'])) {
     header('location: /login');
 }
 
+if(!isset($_GET['categoria'])){
+    header("Location: http://spesaduezero.michelesottocasa.tech/dashboard");
+}
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -189,7 +192,7 @@ if (!isset($_SESSION['username'])) {
             position: relative;
             top: 10px;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             margin: 0 auto;
             width: 100%;
         }
@@ -353,14 +356,6 @@ if (!isset($_SESSION['username'])) {
             justify-content: space-around;
         }
 
-        .prodotti {
-            position: relative;
-            top: 10px;
-            display: flex;
-            justify-content: flex-start;
-            margin: 0 auto;
-            width: 100%;
-        }
 
         .img_card {
             width: 150px;
@@ -384,16 +379,28 @@ if (!isset($_SESSION['username'])) {
 
 
                 <ul id="menu">
-                    <a href="index.html">
-                        <li>HOME</li>
-                    </a>
-                    <a id="aggiungi">
-                        <li>AGGIUNGI</li>
-                    </a>
-                    <a href="#">
-                        <li>LOGOUT</li>
-                    </a>
-                </ul>
+                <a href="/dashboard">
+                    <li>HOME</li>
+                </a>
+                <a id="chiSiamo.html">
+                    <li>CHI SIAMO</li>
+                </a>
+                <?php
+                $supermarketIDs = getSupermarketIDs($_SESSION['username']);
+                if (count($supermarketIDs) > 0) {
+                    foreach ($supermarketIDs as $currentID): ?>
+                        <li><b><a class="menu__item"
+                                  href="/supermarket?id=<?php echo $currentID; ?>">
+                                    <?php echo getSupermarketNameFromID($currentID); ?>
+                                    di <?php echo getSupermarketCityFromID($currentID) ?>
+                                </a></b></li>
+                    <?php endforeach;
+                }
+                ?>
+                <a href="/logged?logout=1">
+                    <li>LOGOUT</li>
+                </a>
+            </ul>
             </div>
             <div id="<?php echo $_SESSION['username']; ?>" class="utente">Welcome <?php echo $_SESSION['username']; ?></div>
 
@@ -405,7 +412,7 @@ if (!isset($_SESSION['username'])) {
 
     <br>
     <div class="undernav">
-        <A href="carrello.html"> <img class="img_carrello2" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/foto_carrello.png"> </A>
+        <A href="/carrello"> <img class="img_carrello2" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/foto_carrello.png"> </A>
         <form>
             <p>
                 <input type="text" class="cerca">

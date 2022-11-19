@@ -1,0 +1,141 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.sfondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.475);
+    z-index: 800;
+    overflow-y: hidden;
+}
+
+#popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    width: 60%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.title {
+    font-size: large;
+}
+
+.carrello {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.prodotti {
+    height: 90%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.supermercati {
+    height: 90%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.cardcarrello {
+    border-top: solid orange 2px;
+    border-bottom: solid orange 2px;
+    margin: 2px;
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.imgcarrello {
+    width: 50px;
+    height: 50px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carrelloimg {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.cardprezzi {
+    display: flex;
+    justify-content: space-evenly;
+    border: solid 3px orange;
+    width: 50%;
+}
+
+.nomesupermercato {
+    font-weight: bold;
+}
+
+.gg-close {
+    box-sizing: border-box;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    transform: scale(var(--ggs, 1));
+    width: 30px;
+    height: 30px;
+    border: 2px solid transparent;
+    border-radius: 40px
+}
+
+.gg-close::after,
+.gg-close::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background: currentColor;
+    transform: rotate(45deg);
+    border-radius: 5px;
+    top: 8px;
+    left: 1px
+}
+
+.gg-close::after {
+    transform: rotate(-45deg)
+}
+
+.aref{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}

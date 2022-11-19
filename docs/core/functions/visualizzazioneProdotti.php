@@ -14,7 +14,10 @@ function richiestaElementi()
 
 
             <div class="card">
-                <div class="img"><img class="img_card" src="<?php echo 'http://spesaduezero.michelesottocasa.tech/assets/images/user-upload/'.$row['IDProdotto'].'.jpg' ?>" alt=""></div>
+                <div class="img">
+                <img class="img_card"
+                             src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['product_image']); ?>"/>
+                </div>
                 <div class="descrizione">
                     <span class="brand text"><?php echo $row["Marca"] ?></span> <br>
                     <span class="name text"><?php echo $row["Nome"] ?></span><br>
