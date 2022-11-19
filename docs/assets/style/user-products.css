@@ -199,3 +199,15 @@ nav {
     width: 60%;
     justify-content: space-around;
 }
+
+.undernav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_carrello2 {
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+}

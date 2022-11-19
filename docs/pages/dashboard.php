@@ -33,6 +33,9 @@ if (!isset($_SESSION['username'])) {
 
 
             <ul id="menu">
+            <a href="/dashboard">
+                    <li>HOME</li>
+                </a>
                 <a id="chiSiamo.html">
                     <li>CHI SIAMO</li>
                 </a>
@@ -60,6 +63,10 @@ if (!isset($_SESSION['username'])) {
 </div>
 
 <?php include 'core/functions/richiestaCategorie.php' ?>
+<br>
+<div class="undernav">
+        <A href="/carrello"> <img class="img_carrello2" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/foto_carrello.png"> </A>
+    </div>
     <div class="categorie">
         <div class="rowcategoria">
             <?php

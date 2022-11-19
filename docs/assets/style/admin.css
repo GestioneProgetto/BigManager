@@ -128,9 +128,9 @@ body {
   transform: none;
 }
 
-nav{
-height: 125px;
-border-bottom: solid rgb(241, 120, 33) 3px;
+nav {
+  height: 125px;
+  border-bottom: solid rgb(241, 120, 33) 3px;
 }
 
 .card {
@@ -140,7 +140,7 @@ border-bottom: solid rgb(241, 120, 33) 3px;
   margin: 20px;
 }
 
-.card:hover{
+.card:hover {
   opacity: 0.8;
 }
 
@@ -154,7 +154,7 @@ border-bottom: solid rgb(241, 120, 33) 3px;
 }
 
 .brand {
-  margin-top: 10px;            
+  margin-top: 10px;
   font-size: 12px;
   text-transform: uppercase;
   white-space: nowrap;
@@ -180,33 +180,34 @@ border-bottom: solid rgb(241, 120, 33) 3px;
 }
 
 
-span{
+span {
   margin-left: 15px;
 }
 
-.carello{
+.carello {
   text-align: center;
 }
 
-.img_carrello{
+.img_carrello {
   width: 50px;
   height: 50px;
 }
 
-.prezzo{
+.prezzo {
   font-size: 15pt
 }
-.quantità{
+
+.quantità {
   width: 30px;
   height: 20px;
   display: flex;
 }
 
-.text{
+.text {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.img_logo{
+.img_logo {
   width: 100px;
   position: absolute;
   right: 30px;
@@ -214,10 +215,10 @@ span{
   z-index: -50;
 }
 
-#utente{
+#utente {
   width: 100px;
   height: 30px;
- margin: 30px auto;
+  margin: 30px auto;
   z-index: 500;
   font-size: large;
   font-weight: bold;
@@ -230,8 +231,8 @@ span{
 
 .sfondo {
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   background-color: rgba(128, 128, 128, 0.475);
@@ -266,7 +267,8 @@ span{
   height: 60%;
   margin: 20px;
 }
-.button{
+
+.button {
   display: flex;
   justify-content: space-around;
 }
@@ -275,12 +277,12 @@ span{
   position: relative;
   top: 10px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   margin: 0 auto;
   width: 100%;
 }
 
-.img_card{
+.img_card {
   width: 200px;
   height: 250px;
   object-fit: contain;

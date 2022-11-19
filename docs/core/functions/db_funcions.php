@@ -10,12 +10,12 @@ function richiesta($supermarketID)
     $sql = 'SELECT * FROM `prezzi-per-supermercato` WHERE IDSupermercato ="' . $supermarketID . '"';
     $result = $GLOBALS['db']->query($sql);
 
-    $i = 0;
+    $j = 0;
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            $prodotti[$i] = $row["IDProdotto"];
-            $prezzo[$i] = $row["Prezzo"];
-            $i = $i + 1;
+            $prodotti[$j] = $row["IDProdotto"];
+            $prezzo[$j] = $row["Prezzo"];
+            $j = $j + 1;
         }
     }
 
@@ -32,9 +32,6 @@ function richiesta($supermarketID)
                     <div class="img">
                         <img class="img_card"
                              src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['product_image']); ?>"/>
-                        <!--<img class="img_card"
-                             src="<?php /*echo '/assets/images/user-upload/' . $row['IDProdotto'] . '.jpg' */ ?>"
-                             alt="">-->
                     </div>
                     <div class="descrizione">
                         <span class="brand text"><?php echo $row["Marca"] ?></span> <br>
@@ -65,7 +62,7 @@ function richiesta($supermarketID)
                 </div>
 
                 <?php
-                if ($row["IDProdotto"] % 5 == 0) {
+                if ($i!=0 && $i % 4 == 0) {
                     echo "</div> <div class='prodotti'>";
                 }
             }
