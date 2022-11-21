@@ -33,7 +33,6 @@
   - **IDProdotto**: ID del prodotto
   - **IDSUpermercato**: ID del supermercato
   - **Prezzo**: Prezzo del prodotto
-  - **PrezzoInSconto**: Se impostato, indica il prezzo del prodotto scontato
 - **Carrello**:
   - **IDCarrello**: chiave primaria
   - **UserName**: Username utente a cui è associato il carrello
