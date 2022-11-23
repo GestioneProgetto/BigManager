@@ -147,3 +147,12 @@
 .gg-close::after {
     transform: rotate(-45deg)
 }
+
+.button{
+    background-color: orange;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: transparent;
+    font-size: larger;
+}

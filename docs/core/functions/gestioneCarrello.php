@@ -26,9 +26,15 @@ function richiestacarrello()
                         <input type="text" readonly name="carrelloquantita" value="<?php echo "N° " . $row["quantita"] ?>" style=" width: 50px; border: transparent;">
 
                         <form action="/core/functions/eliminaDaCarrello.php" method="post">
-                            <input type="text" name="productID" id="productID" value="<?php echo $row["IDProdotto"] ?>" hidden>
-                            <button>
-                                ELIMINA
+                            <input type="text" name="productID" value="<?php echo $row["IDProdotto"] ?>" hidden>
+                            <button class="button">
+                                -
+                            </button>
+                        </form>
+                        <form action="/core/functions/aggiungiDaCarrello.php" method="post">
+                            <input type="text" name="productPlus" value="<?php echo $row["IDProdotto"] ?>" hidden>
+                            <button class="button">
+                                +
                             </button>
                         </form>
                     </div>
