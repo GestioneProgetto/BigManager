@@ -8,10 +8,10 @@ Cercando su internet è possibile notare come esistano alternative con funzional
 
 
 **Funzionalità versione base:**
-- [ ] Visualizzazione dei differenti totali per supermercato
+- [X] Visualizzazione dei differenti totali per supermercato
 - [ ] Aggiunta prodotti dai supermercati
-- [ ] Aggiunta prodotti nel carrello dai singoli utenti
-- [ ] Suddivisione singola spesa nei diversi supermercati (differenziando per convenienza)
+- [X] Aggiunta prodotti nel carrello dai singoli utenti
+- [X] Suddivisione singola spesa nei diversi supermercati (differenziando per convenienza)
 
 **Funzionalità seconda versione:**
 - [ ] Ricerca supermercati vicino all'utente
