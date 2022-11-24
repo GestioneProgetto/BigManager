@@ -23,12 +23,13 @@ if (!empty($_FILES["image"]["name"])) {
         $imgContent = addslashes(file_get_contents($image));
 
         // Insert image content into database
-        $result = $db->query("SELECT * FROM prodotti WHERE Nome='$prodotto'");
+        $result = $db->query("SELECT * FROM `prezzi-per-supermercato` WHERE IDProdotto='$prodotto' AND IDSupermercato='$IDSupermarket'");
 
         $product = mysqli_fetch_assoc($result);
 
         if ($product) {
-            header('Location: /supermarket?id=' . $IDSupermarket . '&add=already_exist');
+            $_SESSION['query_result']="product_already_exist";
+            header('Location: /supermarket?id=' . $IDSupermarket);
             die('product already exist');
         }
 

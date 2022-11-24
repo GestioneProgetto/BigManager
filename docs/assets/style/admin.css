@@ -237,7 +237,6 @@ span {
   width: 100%;
   background-color: rgba(128, 128, 128, 0.475);
   z-index: 800;
-  display: none;
   overflow-y: hidden;
 }
 
