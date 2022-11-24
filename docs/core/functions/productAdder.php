@@ -1,5 +1,6 @@
 <?php
 include_once 'core/index.php';
+ini_set('display_errors', '1');
 
 $marca = $_POST['marca'];
 $prodotto = $_POST['prodotto'];
@@ -22,22 +23,27 @@ if (!empty($_FILES["image"]["name"])) {
         $image = $_FILES['image']['tmp_name'];
         $imgContent = addslashes(file_get_contents($image));
 
-        // Insert image content into database
-        $result = $db->query("SELECT * FROM `prezzi-per-supermercato` WHERE IDProdotto='$prodotto' AND IDSupermercato='$IDSupermarket'");
-
-        $product = mysqli_fetch_assoc($result);
-
-        if ($product) {
-            $_SESSION['query_result']="product_already_exist";
-            header('Location: /supermarket?id=' . $IDSupermarket);
-            die('product already exist');
-        }
-
-        $insert1 = $db->query("INSERT into prodotti (Nome, Marca,Peso, product_image, ID_Categoria) VALUES ('$prodotto','$marca','$peso','$imgContent', '$category');");
-
         $ID_Prodotto = mysqli_fetch_all($db->query("SELECT IDProdotto FROM `prodotti` WHERE Nome='$prodotto';"))[0][0];
 
-        echo $ID_Prodotto . ' - ' . $IDSupermarket . ' v';
+        if($ID_Prodotto != null) {// Insert image content into database
+            $result = $db->query("SELECT * FROM `prezzi-per-supermercato` WHERE IDProdotto='$ID_Prodotto' AND IDSupermercato='$IDSupermarket'");
+
+            $product = mysqli_fetch_assoc($result);
+
+            if ($product) {
+                $_SESSION['query_result'] = "product_already_exist";
+                header('Location: /supermarket?gg=3&id=' . $IDSupermarket);
+                die('product already exist');
+            }
+
+            echo "update<br>";
+            $insert1 = $db->query("UPDATE `prodotti` SET Nome = '$prodotto', Marca = '$marca',Peso = '$peso', product_image = '$imgContent', ID_Categoria = '$category' WHERE IDProdotto = '$ID_Prodotto'");
+        }else {
+            $insert1 = $db->query("INSERT into prodotti (Nome, Marca,Peso, product_image, ID_Categoria) VALUES ('$prodotto','$marca','$peso','$imgContent', '$category');");
+        }
+        $ID_Prodotto = mysqli_fetch_all($db->query("SELECT IDProdotto FROM `prodotti` WHERE Nome='$prodotto';"))[0][0];
+
+        echo $ID_Prodotto . ' prod - ' . $IDSupermarket . ' sup';
 
         $insert2 = $db->query("INSERT INTO `prezzi-per-supermercato` (`IDProdotto`, `IDSupermercato`, `Prezzo`) VALUES ('$ID_Prodotto','$IDSupermarket','$prezzo');");
 

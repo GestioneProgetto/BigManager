@@ -60,6 +60,8 @@ function richiesta($supermarketID)
                                 <form action="/core/functions/productRemover.php" method="post">
                                     <input type="text" name="productID" id="productID"
                                            value="<?php echo $row["IDProdotto"] ?>" hidden>
+                                    <input type="text" name="supermarketID" id="supermarketID"
+                                           value="<?php echo $_GET['id'] ?>" hidden>
                                     <button class="btn btn-primary" name="delate">
                                         ELIMINA
                                     </button>
