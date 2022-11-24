@@ -25,10 +25,10 @@ include_once 'core/index.php';
 
 
             <ul id="menu">
-            <a href="/dashboard">
+                <a href="/dashboard">
                     <li>HOME</li>
                 </a>
-                <a id="chiSiamo.html">
+                <a href="/about-us">
                     <li>CHI SIAMO</li>
                 </a>
                 <?php
