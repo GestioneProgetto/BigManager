@@ -287,3 +287,9 @@ span {
   height: 250px;
   object-fit: contain;
 }
+
+.btn btn-primary
+{
+  background-color: rgb(255,164,89);
+  border-color: rgb(255,164,89);
+}
