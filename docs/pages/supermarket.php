@@ -5,8 +5,6 @@ include_once 'core/index.php';
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/style/admin.css">
     <style>
         .error{
@@ -118,11 +116,11 @@ $utente = $_SESSION['username'];
                 <DIV class="button">
                         <input type="text" name="supermarketID" value="<?php echo $_GET['id'] ?>" hidden>
                         <input type="text" name="productID" value="<?php echo $_GET['productID'] ?>" hidden>
-                        <button id="save"> SAVE</button>
+                        <button class="btn-primary" id="save "> SAVE</button>
                     </form>
                     <form action="/supermarket?id=<?php echo $_GET['id'] ?>" method="get">
                         <input type="text" name="id" value="<?php echo $_GET['id'] ?>" hidden>
-                        <button id="close1"> CLOSE</button>
+                        <button class="btn-primary" id="close1"> CLOSE</button>
                     </form>
                 </DIV>
             </div>
@@ -158,11 +156,11 @@ $utente = $_SESSION['username'];
                 <input type="text" hidden name="supermarketID" value="<?php echo $_GET['id']; ?>">
                 <br>
                 <div class="button">
-                    <button id="add" type="submit" name="submit"> AGGIUNGI</button>
+                    <button  class="btn-primary" id="add" type="submit" name="submit"> AGGIUNGI</button>
         </form>
                     <form action="" method="get">
                         <input type="text" name="id" value="<?php echo $_GET['id'] ?>" hidden>
-                        <button id="close1" type="submit"> CLOSE</button>
+                        <button id="close1" class="btn-primary" type="submit"> CLOSE</button>
                     </form>
                 </div>
             </div>
