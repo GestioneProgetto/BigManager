@@ -1,0 +1,43 @@
+#chiSiamo {
+    color: orange;
+    margin: 30px auto;
+    width: 150px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#scritta {
+    margin: 30px auto;
+    font-size: large;
+    width: 50%;
+}
+
+.imgFoto {
+  object-fit: contain;
+  border-radius: 50px;
+}
+
+
+.colori {
+    border-radius: 50px;
+    border-color: orange;
+    border-style: solid;
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: 200px;
+}
+
+.grid{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 30px;
+}
+
+.Dati{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+}

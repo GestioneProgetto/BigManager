@@ -140,7 +140,8 @@ nav {
 .card {
   width: 250px;
   border-radius: 10%;
-  border: 1px solid #aaaaaa;
+  border: 1px solid white;
+  background-color: white;
   margin: 20px;
 }
 
@@ -276,6 +277,8 @@ span {
 .button {
   display: flex;
   justify-content: space-around;
+  border: transparent;
+
 }
 
 .prodotti {
@@ -296,7 +299,11 @@ span {
 .btn-primary
 {
   background-color: rgb(255,164,89);
-  border-color: rgb(255,164,89);
+  border-radius: 10px;
+  border: orange solid 1px;
+  height: 30px;
+  width: 70px;
+  margin: 10px;
 }
 
 .btn-primary:hover
