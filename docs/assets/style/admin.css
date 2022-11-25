@@ -297,6 +297,12 @@ span {
   border-color: rgb(255,164,89);
 }
 
+.btn-primary:hover
+{
+  background-color: #fd7e14;
+  border-color: #fd7e14;
+}
+
 #aggiungi_btn
 {
   background-color: transparent;
@@ -309,4 +315,10 @@ span {
 
 #aggiungi_btn:hover {
   color: gray;
+}
+
+.modifica
+{
+    display: flex;
+    justify-content: space-evenly;
 }

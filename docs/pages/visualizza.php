@@ -66,7 +66,7 @@ if(!isset($_GET['categoria'])){
         <form>
             <p>
                 <input type="text" class="cerca">
-                <input type="button" class="cerca" value="cerca">
+                <input type="button" class="cerca" value="Cerca">
             </p>
         </form>
     </div>

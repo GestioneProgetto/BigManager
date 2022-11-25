@@ -180,6 +180,7 @@ nav {
     border-radius: 10%;
     border: 1px solid #aaaaaa;
     margin: 20px;
+    background-color: #fff;
 }
 
 .card:hover {
