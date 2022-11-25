@@ -32,7 +32,7 @@ if(!isset($_GET['categoria'])){
                 <a href="/dashboard">
                     <li>HOME</li>
                 </a>
-                <a id="chiSiamo.html">
+                <a href="/about-us">
                     <li>CHI SIAMO</li>
                 </a>
                 <?php

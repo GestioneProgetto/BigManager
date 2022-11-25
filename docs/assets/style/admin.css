@@ -4,7 +4,7 @@ body {
 
   color: #000;
   height: 100vh;
-  background-color: #eee;
+  background-color: #ddd;
   z-index: -10000;
 }
 
@@ -295,4 +295,18 @@ span {
 {
   background-color: rgb(255,164,89);
   border-color: rgb(255,164,89);
+}
+
+#aggiungi_btn
+{
+  background-color: transparent;
+  border: 0;
+  font-size: 22px;
+  cursor: pointer;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+#aggiungi_btn:hover {
+  color: gray;
 }

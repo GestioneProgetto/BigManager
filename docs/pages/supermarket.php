@@ -43,7 +43,7 @@ $utente = $_SESSION['username'];
                 <a id="aggiungi">
                     <form action="/supermarket" method="get">
                         <input type="text" name="id" hidden value="<?php echo $_GET['id'] ?>">
-                        <button type="submit" name="add">AGGIUNGI</button>
+                        <button type="submit" name="add" id="aggiungi_btn">AGGIUNGI</button>
                     </form>
 <!--                    <li>AGGIUNGI</li>-->
                 </a>

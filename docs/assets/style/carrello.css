@@ -9,7 +9,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(128, 128, 128, 0.475);
+    background-color:#ddd;
     z-index: 800;
     overflow-y: hidden;
 }
