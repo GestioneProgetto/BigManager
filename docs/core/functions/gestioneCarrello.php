@@ -23,20 +23,46 @@ function richiestacarrello()
                             <div class="carrelloprodotto"><?php echo $row1["Nome"] ?></div>
                             <div class="carrellopeso"><?php echo $row1["Peso"] . 'g' ?></div>
                         </div>
-                        <input type="text" readonly name="carrelloquantita" value="<?php echo "N° " . $row["quantita"] ?>" style=" width: 50px; border: transparent;">
+                        <input type="text" class="quantita" readonly name="carrelloquantita" value="<?php echo "N° " . $row["quantita"] ?>">
+                        <div class="piuemeno">
+                            <form class="piu" action="/core/functions/eliminaDaCarrello.php" method="post">
+                                <input type="text" name="productID" value="<?php echo $row["IDProdotto"] ?>" hidden>
+                                <button class="button">
+                                    -
+                                </button>
+                            </form>
+                            <form class="meno" action="/core/functions/aggiungiDaCarrello.php" method="post">
+                                <input type="text" name="productPlus" value="<?php echo $row["IDProdotto"] ?>" hidden>
+                                <button class="button">
+                                    +
+                                </button>
+                            </form>
+                        </div>
+                        <?php
 
-                        <form action="/core/functions/eliminaDaCarrello.php" method="post">
-                            <input type="text" name="productID" value="<?php echo $row["IDProdotto"] ?>" hidden>
-                            <button class="button">
-                                -
-                            </button>
-                        </form>
-                        <form action="/core/functions/aggiungiDaCarrello.php" method="post">
-                            <input type="text" name="productPlus" value="<?php echo $row["IDProdotto"] ?>" hidden>
-                            <button class="button">
-                                +
-                            </button>
-                        </form>
+
+
+                        $sql3 = 'SELECT * FROM `supermercati`';
+                        $result3 = $GLOBALS['db']->query($sql3);
+                        if ($result3->num_rows > 0) {
+                            while ($row3 = $result3->fetch_assoc()) {
+                                $sql2 = 'SELECT * FROM `prezzi-per-supermercato` WHERE IDProdotto ="' . $row["IDProdotto"] . '" AND IDSupermercato="' . $row3['IDSupermercato'] . '";';
+                                $result2 = $GLOBALS['db']->query($sql2);
+                                if ($result2->num_rows > 0) {
+                                    while ($row2 = $result2->fetch_assoc()) {
+                                        if ($row2['Prezzo'] != 0) {
+                        ?>
+                                            <div class="<?php echo $row2['IDSupermercato']; ?>" hidden><?php echo $row2['Prezzo'] . "€"; ?></div>
+                                    <?php
+                                        }
+                                    }
+                                } else { ?>
+                                    <div class="<?php echo $row3['IDSupermercato'];?>" style="display: none; width: 25%;" hidden>prodotto non disponibile</div>
+                        <?php
+                                }
+                            }
+                        }
+                        ?>
                     </div>
         <?php
                 }
@@ -85,25 +111,21 @@ function calcolototali()
         }
     }
 
-    do
-    {
-            $scambiato = false;
-            for( $i = 0, $c = count( $totali ) - 1; $i < $c; $i++ )
-            {
-                if( $totali[$i] > $totali[$i + 1] )
-        {
-                    $temp = $totali[$i + 1];
-                    $totali[$i + 1] = $totali[$i];
-                    $totali[$i] = $temp;
+    do {
+        $scambiato = false;
+        for ($i = 0, $c = count($totali) - 1; $i < $c; $i++) {
+            if ($totali[$i] > $totali[$i + 1]) {
+                $temp = $totali[$i + 1];
+                $totali[$i + 1] = $totali[$i];
+                $totali[$i] = $temp;
 
-                    $temp1 = $supermercati[$i + 1];
-                    $supermercati[$i + 1] = $supermercati[$i];
-                    $supermercati[$i] = $temp1;
-                    $scambiato = true;
-        }
+                $temp1 = $supermercati[$i + 1];
+                $supermercati[$i + 1] = $supermercati[$i];
+                $supermercati[$i] = $temp1;
+                $scambiato = true;
             }
-    }
-    while($scambiato);
+        }
+    } while ($scambiato);
 
     $nome = "";
     for ($i = 0; $i < count($supermercati); $i++) {
@@ -115,12 +137,35 @@ function calcolototali()
             }
         }
         ?>
-        <div class="cardprezzi">
-            <div class="nomesupermercato"> <?php echo $nome ?></div>
-            <div class="prezzosupermercato"> <?php echo $totali[$i] . "€" ?></div>
-        </div>
+        <form class="formprezzi" method="post">
+            <div class="cardprezzi" onmouseover="inPop(<?php echo $supermercati[$i] ?>)" onmouseout="outPop(<?php echo $supermercati[$i] ?>)">
+                <div class="nomesupermercato" name="nomesupermercato"> <?php echo $nome ?></div>
+                <div class="prezzosupermercato"><?php echo $totali[$i] . "€" ?></div>
+                <div name="idsupermercato" hidden><?php echo $supermercati[$i] ?></div>
+            </div>
+        </form>
 <?php
     }
 }
 
 ?>
+
+<script>
+    function inPop(x) {
+        prezzi = document.getElementsByClassName(x);
+        for (let i = 0; i < prezzi.length; i++) {
+            document.getElementsByClassName(x)[i].style.display = "block";
+            document.getElementsByClassName("meno")[i].style.display = "none";
+            document.getElementsByClassName("piu")[i].style.display = "none";
+        }
+    }
+
+    function outPop(x) {
+        prezzi = document.getElementsByClassName(x);
+        for (let i = 0; i < prezzi.length; i++) {
+            document.getElementsByClassName(x)[i].style.display = "none";
+            document.getElementsByClassName("meno")[i].style.display = "block";
+            document.getElementsByClassName("piu")[i].style.display = "block";
+        }
+    }
+</script>

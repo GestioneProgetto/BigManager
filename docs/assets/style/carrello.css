@@ -10,7 +10,7 @@
     height: 100%;
     width: 100%;
     background-color:#ddd;
-    z-index: 800;
+    z-index: -10;
     overflow-y: hidden;
 }
 
@@ -155,4 +155,46 @@
     border-radius: 50%;
     border: transparent;
     font-size: larger;
+}
+
+.formprezzi{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.submit{
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    border: transparent;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+}
+
+.piuemeno{
+    width: 65px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#popinfo{
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    position: absolute;
+    top: 15%;
+    left:30%;
+    display: none;
+    z-index: 500;
+}
+.quantita{
+    width: 30px; 
+    border: transparent;
 }

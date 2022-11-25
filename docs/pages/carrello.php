@@ -17,7 +17,7 @@
             <i class="gg-close"></i>
             <a id="aref" href="/dashboard"></a>
             <div class="text title">CARRELLO</div>
-            <div class="carrello">
+            <div class="carrello" id="carrello">
                 <div class="prodotti">
                     <?php richiestacarrello() ?>
                 </div>
@@ -26,7 +26,6 @@
                 </div>
             </div>
         </div>
-
 </body>
 
 </html>
