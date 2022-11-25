@@ -1,12 +1,13 @@
 <?php
 function getSupermarketIDs($username)
 {
-    $query = "SELECT IDSupermercato FROM supermercati WHERE AdminUser = '" . $username . "'";
+    $query = "SELECT IDSupermercato FROM supermercati WHERE AdminUser1 = '" . $username . "' OR AdminUser2 = '" . $username . "' OR AdminUser3 = '" . $username . "'";
     $result = mysqli_query($GLOBALS['db'], $query);
     $toReturn = [];
     foreach (mysqli_fetch_all($result) as $current) {
         array_push($toReturn, $current[0]);
-    }
+    };
+    $_SESSION['supermarketIDs'] = $toReturn;
     return $toReturn;
 }
 

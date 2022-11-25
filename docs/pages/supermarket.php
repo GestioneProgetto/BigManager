@@ -1,5 +1,18 @@
 <?php
 include_once 'core/index.php';
+if (!isset($_GET['id']) || $_GET['id'] == "")
+    header('Location: /dashboard');
+if (!isset($_SESSION['supermarketIDs'])) {
+    header('Location: /dashboard');
+} else {
+    $hasAccess = false;
+    foreach ($_SESSION['supermarketIDs'] as $currentID) {
+        if ($_GET['id'] == $currentID)
+            $hasAccess = true;
+    }
+    if (!$hasAccess)
+        header('Location: /dashboard');
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,11 +20,12 @@ include_once 'core/index.php';
 <head>
     <link rel="stylesheet" href="/assets/style/admin.css">
     <style>
-        .error{
+        .error {
             color: red;
             font-weight: bold;
         }
-        .success{
+
+        .success {
             color: green;
             font-weight: bold;
         }
@@ -43,7 +57,7 @@ $utente = $_SESSION['username'];
                         <input type="text" name="id" hidden value="<?php echo $_GET['id'] ?>">
                         <button type="submit" name="add" id="aggiungi_btn">AGGIUNGI</button>
                     </form>
-<!--                    <li>AGGIUNGI</li>-->
+                    <!--                    <li>AGGIUNGI</li>-->
                 </a>
                 <?php
                 $supermarketIDs = getSupermarketIDs($_SESSION['username']);
@@ -79,8 +93,8 @@ $utente = $_SESSION['username'];
         $IDSupermercato = $_GET['id'];
         $IDProdotto = $_GET['productID'];
         $product_data = mysqli_fetch_all($db->query("SELECT * FROM `prodotti` where IDProdotto = '$IDProdotto'"))[0];
-        if(!$product_data) {
-            $_SESSION['query_result']="product_not_exist";
+        if (!$product_data) {
+            $_SESSION['query_result'] = "product_not_exist";
             header('Location: /supermarket?id=' . $_GET['id']);
         }
         $price = mysqli_fetch_all($db->query("SELECT Prezzo FROM `prezzi-per-supermercato` where IDProdotto = '$IDProdotto' AND IDSupermercato = '$IDSupermercato'"))[0][0];
@@ -112,71 +126,71 @@ $utente = $_SESSION['username'];
                     <input type="number" id="peso" value="<?php echo $product_data[3] ?>"> <br>
                     <label>prezzo:</label>
                     <input type="number" step="0.01" id="prezzo" value="<?php echo $price ?>"> <br>
-                <BR>
-                <DIV class="button">
+                    <BR>
+                    <DIV class="button">
                         <input type="text" name="supermarketID" value="<?php echo $_GET['id'] ?>" hidden>
                         <input type="text" name="productID" value="<?php echo $_GET['productID'] ?>" hidden>
                         <button class="btn-primary" id="save "> SAVE</button>
-                    </form>
-                    <form action="/supermarket?id=<?php echo $_GET['id'] ?>" method="get">
-                        <input type="text" name="id" value="<?php echo $_GET['id'] ?>" hidden>
-                        <button class="btn-primary" id="close1"> CLOSE</button>
-                    </form>
-                </DIV>
-            </div>
-            <div id="salva"></div>
+                </form>
+                <form action="/supermarket?id=<?php echo $_GET['id'] ?>" method="get">
+                    <input type="text" name="id" value="<?php echo $_GET['id'] ?>" hidden>
+                    <button class="btn-primary" id="close1"> CLOSE</button>
+                </form>
+            </DIV>
+        </div>
+        <div id="salva"></div>
+    </div>
+    </div>
+<?php endif; ?>
+
+<?php if (isset($_GET['add'])): ?>
+    <div id="sfondo1" class="sfondo">
+        <div id="popup">
+            <div class="text title">AGGIUNGI</div>
+            <form action="/core/functions/productAdder.php" method="post" enctype="multipart/form-data">
+                <label for="productImage">Immagine: </label>
+                <input type="file" name="image" id="productImage" accept="image/*">
+                <div id="prodotto">
+                    <label>marca:</label>
+                    <input type="text" id="marca" name="marca" required> <br>
+                    <label>prodotto:</label>
+                    <input type="text" id="prodotto" name="prodotto" required> <br>
+                    <label>categoria:</label>
+                    <select name="categoria" id="categoria" required>
+                        <option value=""></option>
+                        <?php
+                        $categories = $db->query("SELECT * FROM categorie");
+                        foreach (mysqli_fetch_all($categories) as $current_category) {
+                            echo '<option value="' . $current_category[0] . '">' . $current_category[0] . '</option>';
+                        }
+                        ?>
+                    </select> <br>
+                    <label>peso:</label> <input type="number" id="peso" name="peso" required> <br>
+                    <label>prezzo:</label> <input type="number" step="0.01" id="prezzo" name="prezzo" required> <br>
+                    <input type="text" hidden name="supermarketID" value="<?php echo $_GET['id']; ?>">
+                    <br>
+                    <div class="button">
+                        <button class="btn-primary" id="add" type="submit" name="submit"> AGGIUNGI</button>
+            </form>
+            <form action="" method="get">
+                <input type="text" name="id" value="<?php echo $_GET['id'] ?>" hidden>
+                <button id="close1" class="btn-primary" type="submit"> CLOSE</button>
+            </form>
         </div>
     </div>
-<?php endif; ?>
-
-<?php if(isset($_GET['add'])): ?>
-<div id="sfondo1" class="sfondo">
-    <div id="popup">
-        <div class="text title">AGGIUNGI</div>
-        <form action="/core/functions/productAdder.php" method="post" enctype="multipart/form-data">
-            <label for="productImage">Immagine: </label>
-            <input type="file" name="image" id="productImage" accept="image/*">
-            <div id="prodotto">
-                <label>marca:</label>
-                <input type="text" id="marca" name="marca" required> <br>
-                <label>prodotto:</label>
-                <input type="text" id="prodotto" name="prodotto" required> <br>
-                <label>categoria:</label>
-                <select name="categoria" id="categoria" required>
-                    <option value=""></option>
-                    <?php
-                    $categories = $db->query("SELECT * FROM categorie");
-                    foreach (mysqli_fetch_all($categories) as $current_category) {
-                        echo '<option value="' . $current_category[0] . '">' . $current_category[0] . '</option>';
-                    }
-                    ?>
-                </select> <br>
-                <label>peso:</label> <input type="number" id="peso" name="peso" required> <br>
-                <label>prezzo:</label> <input type="number" step="0.01" id="prezzo" name="prezzo" required> <br>
-                <input type="text" hidden name="supermarketID" value="<?php echo $_GET['id']; ?>">
-                <br>
-                <div class="button">
-                    <button  class="btn-primary" id="add" type="submit" name="submit"> AGGIUNGI</button>
-        </form>
-                    <form action="" method="get">
-                        <input type="text" name="id" value="<?php echo $_GET['id'] ?>" hidden>
-                        <button id="close1" class="btn-primary" type="submit"> CLOSE</button>
-                    </form>
-                </div>
-            </div>
     </div>
-</div>
+    </div>
 <?php endif; ?>
 
-<?php if(isset($_SESSION['query_result'])):
-    if($_SESSION['query_result'] == "done"):
-    ?>
+<?php if (isset($_SESSION['query_result'])):
+    if ($_SESSION['query_result'] == "done"):
+        ?>
         <p class="success">Product correctly added</p>
     <?php endif;
-    if($_SESSION['query_result'] == "product_not_exist"): ?>
+    if ($_SESSION['query_result'] == "product_not_exist"): ?>
         <p class="error">The product you try to edit not exist</p>
     <?php endif;
-    if($_SESSION['query_result'] == "already_exist"): ?>
+    if ($_SESSION['query_result'] == "already_exist"): ?>
         <p class="error">Product already exist for your supermarket</p>
     <?php endif;
     unset($_SESSION['query_result']);
