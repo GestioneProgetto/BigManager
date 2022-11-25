@@ -58,6 +58,14 @@ include_once 'core/index.php';
 <br>
 <div class="undernav">
         <A href="/carrello"> <img class="img_carrello2" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/foto_carrello.png"> </A>
+
+        <p>
+        <form method="post" action="/visualizza">
+            <input type="text" name="ricerca" class="cerca">
+            <input type="submit" class="cerca" value="Cerca">
+        </form>
+        </p>
+
     </div>
 <div class="categorie">
     <div class="rowcategoria">

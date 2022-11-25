@@ -224,3 +224,7 @@ body{
     background-color: #ddd;
     height: 100vh;
 }
+
+.cerca {
+    height: 30px;
+}
