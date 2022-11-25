@@ -18,6 +18,8 @@ body {
 
   -webkit-user-select: none;
   user-select: none;
+
+  width: calc(100% - 50px);
 }
 
 #menuToggle a {
