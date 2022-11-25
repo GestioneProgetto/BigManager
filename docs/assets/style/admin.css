@@ -2,8 +2,10 @@ body {
   margin: 0;
   padding: 0;
 
-  color: #000000;
-  font-family: "Avenir Next", "Avenir", sans-serif;
+  color: #000;
+  height: 100vh;
+  background-color: #eee;
+  z-index: -10000;
 }
 
 #menuToggle {
@@ -227,6 +229,8 @@ span {
 * {
   padding: 0;
   margin: 0;
+
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .sfondo {
@@ -287,7 +291,7 @@ span {
   object-fit: contain;
 }
 
-.btn btn-primary
+.btn-primary
 {
   background-color: rgb(255,164,89);
   border-color: rgb(255,164,89);

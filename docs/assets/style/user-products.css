@@ -9,6 +9,8 @@
 * {
     padding: 0;
     margin: 0;
+    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 #utente {
@@ -188,7 +190,6 @@ nav {
     border: 3px solid black;
     margin: 15px;
     user-select: none;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
     border-radius: 5px;
 }

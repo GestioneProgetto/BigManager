@@ -34,6 +34,8 @@
 
     -webkit-user-select: none;
     user-select: none;
+
+    width: calc(100% - 50px);
 }
 
 #menuToggle a {
@@ -286,6 +288,8 @@ span {
 * {
     padding: 0;
     margin: 0;
+    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .sfondo {
@@ -337,4 +341,11 @@ span {
     width: 150px;
     height: 200px;
     object-fit: contain;
+}
+
+body
+{
+    height: 100vh;
+    background-color: #eee;
+    z-index: -10000;
 }
