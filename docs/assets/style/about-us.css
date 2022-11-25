@@ -1,5 +1,5 @@
 #chiSiamo {
-    color: orange;
+    color: rgb(241, 120, 33);
     margin: 30px auto;
     width: 150px;
     font-size: x-large;
@@ -13,14 +13,18 @@
 }
 
 .imgFoto {
-  object-fit: contain;
+  object-fit:cover;
   border-radius: 50px;
+}
+.Foto{
+    width: 200px;
+    height: 200px;
 }
 
 
 .colori {
     border-radius: 50px;
-    border-color: orange;
+    border-color: rgb(241, 120, 33);
     border-style: solid;
     display: flex;
     flex-direction: row;

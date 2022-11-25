@@ -1,6 +1,6 @@
 <?php
 include_once 'core/index.php';
-if(!isset($_GET['categoria'])){
+if((!isset($_GET['categoria'])or $_GET['categoria']=="")and!isset($_POST['ricerca']) ){
     header("Location: http://spesaduezero.michelesottocasa.tech/dashboard");
 }
 ?>
@@ -29,28 +29,27 @@ if(!isset($_GET['categoria'])){
 
 
                 <ul id="menu">
-                <a href="/dashboard">
-                    <li>HOME</li>
-                </a>
-                <a href="/about-us">
-                    <li>CHI SIAMO</li>
-                </a>
-                <?php
-                $supermarketIDs = getSupermarketIDs($_SESSION['username']);
-                if (count($supermarketIDs) > 0) {
-                    foreach ($supermarketIDs as $currentID): ?>
-                        <li><b><a class="menu__item"
-                                  href="/supermarket?id=<?php echo $currentID; ?>">
-                                    <?php echo getSupermarketNameFromID($currentID); ?>
-                                    di <?php echo getSupermarketCityFromID($currentID) ?>
-                                </a></b></li>
+                    <a href="/dashboard">
+                        <li>HOME</li>
+                    </a>
+                    <a href="/about-us">
+                        <li>CHI SIAMO</li>
+                    </a>
+                    <?php
+                    $supermarketIDs = getSupermarketIDs($_SESSION['username']);
+                    if (count($supermarketIDs) > 0) {
+                        foreach ($supermarketIDs as $currentID) : ?>
+                            <li><b><a class="menu__item" href="/supermarket?id=<?php echo $currentID; ?>">
+                                        <?php echo getSupermarketNameFromID($currentID); ?>
+                                        di <?php echo getSupermarketCityFromID($currentID) ?>
+                                    </a></b></li>
                     <?php endforeach;
-                }
-                ?>
-                <a href="/logged?logout=1">
-                    <li>LOGOUT</li>
-                </a>
-            </ul>
+                    }
+                    ?>
+                    <a href="/logged?logout=1">
+                        <li>LOGOUT</li>
+                    </a>
+                </ul>
             </div>
             <div id="<?php echo $_SESSION['username']; ?>" class="utente">Welcome <?php echo $_SESSION['username']; ?></div>
 
@@ -63,37 +62,40 @@ if(!isset($_GET['categoria'])){
     <br>
     <div class="undernav">
         <A href="/carrello"> <img class="img_carrello2" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/foto_carrello.png"> </A>
-        <form>
-            <p>
-                <input type="text" class="cerca">
-                <input type="button" class="cerca" value="Cerca">
-            </p>
+
+        <p>
+        <form method="post" action="/visualizza">
+            <input type="text" name="ricerca" class="cerca">
+            <input type="submit" class="cerca" value="Cerca">
         </form>
+        </p>
+
     </div>
 
     <?php
     include_once "core/functions/visualizzazioneProdotti.php";
     ?>
 
-<div class="prodotti">
-    <?php
-    $result = richiestaElementi();
-    ?>
-</div>
+    <div class="prodotti">
+        <?php
+        $result = richiestaElementi();
+        $result = ricerca();
+        ?>
+    </div>
 
 
-<script>
-    const boxes = document.getElementsByName('carrello');
-    boxes.forEach(box => {
-        box.addEventListener('click', function handleClick(event) {
-            $id = event.path[0].id;
-            $quantita = event.path[1].children[0].value;
-            $username = event.path[4].children[0].childNodes[1].childNodes[3].id;
+    <script>
+        const boxes = document.getElementsByName('carrello');
+        boxes.forEach(box => {
+            box.addEventListener('click', function handleClick(event) {
+                $id = event.path[0].id;
+                $quantita = event.path[1].children[0].value;
+                $username = event.path[4].children[0].childNodes[1].childNodes[3].id;
 
-            window.location.href = "/aggiungi?ID=" + $id + "&USERNAME=" + $username + "&QUANTITA=" + $quantita;
+                window.location.href = "/aggiungi?ID=" + $id + "&USERNAME=" + $username + "&QUANTITA=" + $quantita;
+            });
         });
-    });
-</script>
+    </script>
 
 
 

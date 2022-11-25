@@ -2,9 +2,24 @@
 
 include_once 'core/index.php';
 
-function richiestaElementi()
+
+
+function ricerca(){
+    if(isset($_POST['ricerca'])){
+        $sql = 'SELECT * FROM `prodotti` where Nome like "%'.$_POST['ricerca'].'%";';
+        visualizzazione($sql);
+    }
+}
+
+function richiestaElementi(){
+    if(isset( $_GET['categoria'])){
+        $sql = "SELECT * FROM `prodotti` where ID_Categoria ='" . $_GET['categoria'] . "'";
+        visualizzazione($sql);
+    }
+}
+
+function visualizzazione($sql)
 {
-    $sql = "SELECT * FROM `prodotti` where ID_Categoria ='" . $_GET['categoria'] . "'";
     $result = $GLOBALS['db']->query($sql);
     $i = 0;
     if ($result->num_rows > 0) {
@@ -37,7 +52,7 @@ function richiestaElementi()
             }
         }
     } else {
-        echo "0 results";
+        echo "NESSUN PRODOTTO TROVATO";
     }
 }
 

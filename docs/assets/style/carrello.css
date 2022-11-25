@@ -64,8 +64,8 @@
 }
 
 .cardcarrello {
-    border-top: solid orange 2px;
-    border-bottom: solid orange 2px;
+    border-top: solid rgb(241, 120, 33) 2px;
+    border-bottom: solid rgb(241, 120, 33) 2px;
     margin: 2px;
     height: 65px;
     width: 100%;
@@ -94,7 +94,7 @@
 .cardprezzi {
     display: flex;
     justify-content: space-evenly;
-    border: solid 3px orange;
+    border: solid 3px rgb(241, 120, 33);
     width: 50%;
 }
 
@@ -149,7 +149,7 @@
 }
 
 .button{
-    background-color: orange;
+    background-color: rgb(241, 120, 33);
     width: 30px;
     height: 30px;
     border-radius: 50%;

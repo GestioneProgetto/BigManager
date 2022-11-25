@@ -17,14 +17,14 @@ function richiesta($supermarketID)
             $j = $j + 1;
         }
     }
-
+$j=0;
     for ($i = 0; $i < count($prodotti); $i++) {
         $sql = 'SELECT * FROM `prodotti` WHERE IDProdotto ="' . $prodotti[$i] . '"';
         $result = $GLOBALS['db']->query($sql);
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-
+                $j++;
                 $GLOBALS['IDPrdotto'] = $row['IDProdotto'];
 
                 ?>
@@ -71,12 +71,12 @@ function richiesta($supermarketID)
                 </div>
 
                 <?php
-                if ($i!=0 && $i % 4 == 0) {
+                if ( $j % 5 == 0) {
                     echo "</div> <div class='prodotti'>";
                 }
             }
         } else {
-            echo "0 results";
+            echo "NESSUN PRODOTTO TROVATO";
         }
 
     }
