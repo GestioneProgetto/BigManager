@@ -13,8 +13,12 @@
 }
 
 .imgFoto {
-  object-fit: contain;
+  object-fit:cover;
   border-radius: 50px;
+}
+.Foto{
+    width: 200px;
+    height: 200px;
 }
 
 

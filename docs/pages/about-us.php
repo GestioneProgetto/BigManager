@@ -72,7 +72,7 @@ include_once 'core/index.php';
     </div>
     <div class="grid">
         <div id="colombo" class="colori">
-            <img class="imgFoto" src="https://pps.whatsapp.net/v/t61.24694-24/307109942_6563781550315241_5397332720352015625_n.jpg?ccb=11-4&oh=01_AdST5JBuAIOwVKv5_Wcr3g9W2AOCFtD6lOLfMBY3DLhfgg&oe=6389D6B8">
+            <img class="imgFoto" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/team/colombo.jpg">
             <div class="Dati">
             <p> <h4> COGNOME: </h4> Colombo </p>
             <p>   <h4> NOME: </h4> Federico</p>
@@ -81,7 +81,7 @@ include_once 'core/index.php';
         </div>
 
         <div id="sottocasa" class="colori">
-            <img class="imgFoto" src="https://pps.whatsapp.net/v/t61.24694-24/287078817_133886905980959_7680256668359850257_n.jpg?ccb=11-4&oh=01_AdTSrFrHBTdBxEO68dFj22t2j1mE5iTgVg7LeFckhgm6UQ&oe=6389D46D">
+            <img class="imgFoto" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/team/sottocasa.jpg">
             <div class="Dati">
             <p> <h4> COGNOME: </h4> Sottocasa</p>
             <p> <h4> NOME: </h4> Michele</p>
@@ -90,7 +90,7 @@ include_once 'core/index.php';
         </div>
 
         <div id="pugliano" class="colori">
-            <img class="imgFoto" src="https://pps.whatsapp.net/v/t61.24694-24/212612073_167664465909073_5000911054219941764_n.jpg?ccb=11-4&oh=01_AdR8Gjnt76YBolVsqiuoiAUfels090TfVAsAXL2oyipPuQ&oe=6389E00B">
+            <img class="imgFoto Foto" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/team/pugliano.jpg">
             <div class="Dati">
                 <p><h4> COGNOME: </h4> Pugliano</p>
                 <p><h4> NOME: </h4> Denis</p>
@@ -100,7 +100,7 @@ include_once 'core/index.php';
 </div>
 <div class="grid">
         <div id="occhiato" class="colori">
-            <img class="imgFoto" src="https://pps.whatsapp.net/v/t61.24694-24/56153885_2256224534706093_3528036671243157504_n.jpg?ccb=11-4&oh=01_AdS2KpgLdv4LR6T-1XAWltx_YD7NJhdPc6GxY2pUIp898A&oe=6389D750">
+            <img class="imgFoto" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/team/occhiato.jpg">
             <div class="Dati">
             <p> <h4> COGNOME: </h4> Occhiato</p>
             <p> <h4> NOME: </h4> Andrea</p>
@@ -109,7 +109,7 @@ include_once 'core/index.php';
         </div>
 
         <div id="berto" class="colori">
-            <img class="imgFoto" src="https://pps.whatsapp.net/v/t61.24694-24/302639480_504043614502125_7412133882651712349_n.jpg?ccb=11-4&oh=01_AdQwf7vJtS7zv4I43gQ6NgzHfUqON8csB5eYf7PU26CxVA&oe=6389BBE9">
+            <img class="imgFoto" src="http://spesaduezero.michelesottocasa.tech/assets/images/system/team/berto.jpg">
             <div class="Dati">
             <p>  <h4> COGNOME: </h4> Berto</p>
             <p>   <h4> NOME: </h4> Lorenzo</p>
