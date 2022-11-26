@@ -19,7 +19,10 @@
             <div class="text title">CARRELLO</div>
             <div class="carrello" id="carrello">
                 <div class="prodotti">
+                    <table>
                     <?php richiestacarrello() ?>
+                    </table>
+                   
                 </div>
                 <div class="supermercati">
                     <?php calcolototali() ?>

@@ -14,56 +14,67 @@ function richiestacarrello()
             if ($result1->num_rows > 0) {
                 while ($row1 = $result1->fetch_assoc()) {
 ?>
-                    <div class="cardcarrello">
-                        <div class="imgcarrello"><img class="carrelloimg" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row1['product_image']); ?>">
-                        </div>
 
-                        <div class="info">
-                            <div class="carrellomarca"><?php echo $row1["Marca"] ?></div>
-                            <div class="carrelloprodotto"><?php echo $row1["Nome"] ?></div>
-                            <div class="carrellopeso"><?php echo $row1["Peso"] . 'g' ?></div>
-                        </div>
-                        <input type="text" class="quantita" readonly name="carrelloquantita" value="<?php echo "N° " . $row["quantita"] ?>">
-                        <div class="piuemeno">
-                            <form class="piu" action="/core/functions/eliminaDaCarrello.php" method="post">
-                                <input type="text" name="productID" value="<?php echo $row["IDProdotto"] ?>" hidden>
-                                <button class="button">
-                                    -
-                                </button>
-                            </form>
-                            <form class="meno" action="/core/functions/aggiungiDaCarrello.php" method="post">
-                                <input type="text" name="productPlus" value="<?php echo $row["IDProdotto"] ?>" hidden>
-                                <button class="button">
-                                    +
-                                </button>
-                            </form>
-                        </div>
-                        <?php
-
-
-
-                        $sql3 = 'SELECT * FROM `supermercati`';
-                        $result3 = $GLOBALS['db']->query($sql3);
-                        if ($result3->num_rows > 0) {
-                            while ($row3 = $result3->fetch_assoc()) {
-                                $sql2 = 'SELECT * FROM `prezzi-per-supermercato` WHERE IDProdotto ="' . $row["IDProdotto"] . '" AND IDSupermercato="' . $row3['IDSupermercato'] . '";';
-                                $result2 = $GLOBALS['db']->query($sql2);
-                                if ($result2->num_rows > 0) {
-                                    while ($row2 = $result2->fetch_assoc()) {
-                                        if ($row2['Prezzo'] != 0) {
-                        ?>
-                                            <div class="<?php echo $row2['IDSupermercato']; ?>" hidden><?php echo $row2['Prezzo'] . "€"; ?></div>
-                                    <?php
+                    <tr>
+                        <td class="a">
+                            <div class="imgcarrello"><img class="carrelloimg" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row1['product_image']); ?>">
+                            </div>
+                        </td>
+                        <td class="b">
+                            <div class="info">
+                                <div class="carrellomarca"><?php echo $row1["Marca"] ?></div>
+                                <div class="carrelloprodotto"><?php echo $row1["Nome"] ?></div>
+                                <div class="carrellopeso"><?php echo $row1["Peso"] . 'g' ?></div>
+                            </div>
+                        </td>
+                        <td class="c">
+                            <input type="text" class="quantita" readonly name="carrelloquantita" value="<?php echo "N° " . $row["quantita"] ?>">
+                        </td>
+                        <td class="d">
+                            <div class="piuemeno">
+                                <form class="piu" action="/core/functions/eliminaDaCarrello.php" method="post">
+                                    <input type="text" name="productID" value="<?php echo $row["IDProdotto"] ?>" hidden>
+                                    <button class="button">
+                                        -
+                                    </button>
+                                </form>
+                                <form class="meno" action="/core/functions/aggiungiDaCarrello.php" method="post">
+                                    <input type="text" name="productPlus" value="<?php echo $row["IDProdotto"] ?>" hidden>
+                                    <button class="button">
+                                        +
+                                    </button>
+                                </form>
+                            </div>
+                            <?php
+                            $sql3 = 'SELECT * FROM `supermercati`';
+                            $result3 = $GLOBALS['db']->query($sql3);
+                            if ($result3->num_rows > 0) {
+                                while ($row3 = $result3->fetch_assoc()) {
+                                    $sql2 = 'SELECT * FROM `prezzi-per-supermercato` WHERE IDProdotto ="' . $row["IDProdotto"] . '" AND IDSupermercato="' . $row3['IDSupermercato'] . '";';
+                                    $result2 = $GLOBALS['db']->query($sql2);
+                                    if ($result2->num_rows > 0) {
+                                        while ($row2 = $result2->fetch_assoc()) {
+                                            if ($row2['Prezzo'] != 0) {
+                            ?>
+                                                <div class="<?php echo $row2['IDSupermercato']; ?> siprod" hidden><?php echo $row2['Prezzo'] . "€"; ?></div>
+                                        <?php
+                                            }
                                         }
+                                    } else { ?>
+                                        <div class="<?php echo $row3['IDSupermercato']; ?> noprod" hidden>prodotto non disponibile</div>
+                            <?php
                                     }
-                                } else { ?>
-                                    <div class="<?php echo $row3['IDSupermercato'];?>" style="display: none; width: 25%;" hidden>prodotto non disponibile</div>
-                        <?php
                                 }
                             }
-                        }
-                        ?>
-                    </div>
+                            ?>
+                        </td>
+                    </tr>
+
+
+
+
+
+
         <?php
                 }
             }
