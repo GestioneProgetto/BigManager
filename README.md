@@ -9,7 +9,7 @@ Cercando su internet è possibile notare come esistano alternative con funzional
 
 **Funzionalità versione base:**
 - [X] Visualizzazione dei differenti totali per supermercato
-- [ ] Aggiunta prodotti dai supermercati
+- [X] Aggiunta prodotti dai supermercati
 - [X] Aggiunta prodotti nel carrello dai singoli utenti
 - [X] Suddivisione singola spesa nei diversi supermercati (differenziando per convenienza)
 
@@ -17,7 +17,5 @@ Cercando su internet è possibile notare come esistano alternative con funzional
 - [ ] Ricerca supermercati vicino all'utente
 - [ ] Visualizzazione offerte supermercati
 - [ ] Aggiunta supermercati preferiti
-
-[Documentazione diagramma E/R](documentazione/Documentazione%20diagramma%20ER.md)
 
 [Tutte le idee del team](TeamIdea.md)

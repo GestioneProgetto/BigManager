@@ -98,11 +98,15 @@ if (isset($_POST['login_user'])) {
             else
                 $_SESSION['username'] = mysqli_fetch_all($results2)[0][0];
             $_SESSION['success'] = "You are now logged in";
-            $query = "SELECT IDSupermercato FROM supermercati WHERE AdminUser = '" . $username . "'";
-            $result = mysqli_query($db, $query);
-            if (mysqli_num_rows($result) > 0) {
-                $_SESSION['isSupermarketManager'] = 1;
-            }
+
+            $query = "SELECT IDSupermercato FROM supermercati WHERE AdminUser1 = '" . $username . "' OR AdminUser2 = '" . $username . "' OR AdminUser3 = '" . $username . "'";
+            $result = mysqli_query($GLOBALS['db'], $query);
+            $supermarketIDs = [];
+            foreach (mysqli_fetch_all($result) as $current) {
+                array_push($supermarketIDs, $current[0]);
+            };
+            $_SESSION['supermarketIDs'] = $supermarketIDs;
+
             header('location: /dashboard');
         } else {
             array_push($errors, "Wrong username/password combination");
