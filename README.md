@@ -19,3 +19,13 @@ Cercando su internet è possibile notare come esistano alternative con funzional
 - [ ] Aggiunta supermercati preferiti
 
 [Tutte le idee del team](TeamIdea.md)
+
+User Admin 1:
+admin1
+password
+User Admin 2:
+admin2
+pssw
+Normal User
+user
+pssw
